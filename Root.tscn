@@ -18,6 +18,11 @@ position = Vector2( -335, -276 )
 scale = Vector2( 2.20313, 5.14063 )
 texture = ExtResource( 1 )
 
+[node name="Icon4" type="Sprite" parent="."]
+position = Vector2( 262, 39.75 )
+scale = Vector2( 2.20313, 0.523439 )
+texture = ExtResource( 1 )
+
 [node name="Node2D" type="Node2D" parent="."]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
