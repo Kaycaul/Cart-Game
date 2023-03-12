@@ -14,42 +14,6 @@ _data = {
 [node name="Scenery" type="Node2D" parent="."]
 position = Vector2( 77, 207 )
 
-[node name="Icon" type="Sprite" parent="Scenery"]
-position = Vector2( 503, 164 )
-texture = ExtResource( 1 )
-offset = Vector2( -226, -121 )
-
-[node name="Icon2" type="Sprite" parent="Scenery"]
-position = Vector2( 356, 31 )
-scale = Vector2( 1.41016, 1.46094 )
-texture = ExtResource( 1 )
-
-[node name="Icon3" type="Sprite" parent="Scenery"]
-position = Vector2( 301.25, 103.75 )
-scale = Vector2( 1.14844, 1.19532 )
-texture = ExtResource( 1 )
-
-[node name="Icon4" type="Sprite" parent="Scenery"]
-position = Vector2( 185, -167.25 )
-scale = Vector2( 2.20313, 0.523439 )
-texture = ExtResource( 1 )
-
-[node name="Icon5" type="Sprite" parent="Scenery"]
-position = Vector2( 455, 177 )
-scale = Vector2( 1.41016, 1.46094 )
-texture = ExtResource( 1 )
-
-[node name="Icon6" type="Sprite" parent="Scenery"]
-position = Vector2( 561, -68 )
-scale = Vector2( 1.41016, 1.46094 )
-texture = ExtResource( 1 )
-
-[node name="Icon7" type="Sprite" parent="Scenery"]
-position = Vector2( 444, 28 )
-scale = Vector2( 1.41016, 1.46094 )
-texture = ExtResource( 1 )
-offset = Vector2( -12.0553, 0 )
-
 [node name="PlayerPath" type="Path2D" parent="."]
 curve = SubResource( 1 )
 
@@ -65,7 +29,19 @@ position = Vector2( 833, 117 )
 rotation = 0.329448
 
 [node name="Player" type="Sprite" parent="PlayerPath/PlayerPathFollow"]
+rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
 move_speed = 322
+
+[node name="RemoteCartCamera" type="RemoteTransform2D" parent="PlayerPath/PlayerPathFollow/Player"]
+remote_path = NodePath("../../../../CartCamera")
+
+[node name="CartCamera" type="Camera2D" parent="."]
+position = Vector2( 833, 117 )
+rotation = 1.90024
+scale = Vector2( 0.4, 0.4 )
+rotating = true
+current = true
+zoom = Vector2( 0.25, 0.25 )
