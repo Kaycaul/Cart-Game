@@ -57,7 +57,7 @@ stream = ExtResource( 6 )
 
 [node name="CartCamera" type="Camera2D" parent="."]
 position = Vector2( 833, 117 )
-rotation = 1.90024
+rotation = 1.90025
 scale = Vector2( 0.4, 0.4 )
 rotating = true
 current = true
