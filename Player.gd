@@ -3,7 +3,7 @@ extends Sprite
 onready var path_follow = get_parent() # gets the parent (which should be a path follower) to move the player
 
 export var move_speed = 1
-var accel = 0.5
+export var accel = 0.5
 
 var side_movement = 0
 
