@@ -1,13 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://PathLine.gd" type="Script" id=3]
+[ext_resource path="res://Obstacle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Obstacle.gd" type="Script" id=5]
+[ext_resource path="res://explosion.wav" type="AudioStream" id=6]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( -163.154, -55.6378, 163.154, 55.6378, 833, 117, 4.70223, -99.5087, -4.70223, 99.5087, 988, 289, 321.696, 12.0136, -321.696, -12.0136, 313, 524, -202.896, -5.33936, 202.896, 5.33936, 181, 57, -177.349, -2.24492, 177.349, 2.24492, 430, 59, 0, 0, 0, 0, 744, 92, 0, 0, 0, 0, 833, 117 )
 }
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 31.7566, 30.8355 )
 
 [node name="Root" type="Node"]
 
@@ -35,8 +41,19 @@ texture = ExtResource( 1 )
 script = ExtResource( 2 )
 move_speed = 322
 
+[node name="KinematicBody2D" type="KinematicBody2D" parent="PlayerPath/PlayerPathFollow/Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPath/PlayerPathFollow/Player/KinematicBody2D"]
+shape = SubResource( 2 )
+
 [node name="RemoteCartCamera" type="RemoteTransform2D" parent="PlayerPath/PlayerPathFollow/Player"]
 remote_path = NodePath("../../../../CartCamera")
+
+[node name="CollisionEffect" type="AudioStreamPlayer2D" parent="PlayerPath/PlayerPathFollow/Player"]
+position = Vector2( 396.963, 2065.14 )
+rotation = -1.90024
+scale = Vector2( 2.5, 2.5 )
+stream = ExtResource( 6 )
 
 [node name="CartCamera" type="Camera2D" parent="."]
 position = Vector2( 833, 117 )
@@ -45,3 +62,14 @@ scale = Vector2( 0.4, 0.4 )
 rotating = true
 current = true
 zoom = Vector2( 0.25, 0.25 )
+
+[node name="Obstacle" parent="." instance=ExtResource( 4 )]
+position = Vector2( 728, 348 )
+script = ExtResource( 5 )
+
+[node name="Obstacle2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 465, 71 )
+script = ExtResource( 5 )
+
+[connection signal="body_entered" from="Obstacle" to="PlayerPath/PlayerPathFollow/Player" method="_on_Obstacle_body_entered"]
+[connection signal="body_entered" from="Obstacle2" to="PlayerPath/PlayerPathFollow/Player" method="_on_Obstacle2_body_entered"]
