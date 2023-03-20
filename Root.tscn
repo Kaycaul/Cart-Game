@@ -55,13 +55,13 @@ rotation = -0.32944
 stream = ExtResource( 6 )
 
 [node name="RemoteCartCamera" type="RemoteTransform2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
-position = Vector2( 64.7307, -1.61755 )
+position = Vector2( 66.623, -2.26453 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 remote_path = NodePath("../../../../CartCamera")
 
 [node name="CartCamera" type="Camera2D" parent="."]
-position = Vector2( 894.773, 136.411 )
+position = Vector2( 896.773, 136.411 )
 rotation = 1.90024
 scale = Vector2( 0.4, 0.4 )
 rotating = true
@@ -75,10 +75,6 @@ script = ExtResource( 5 )
 
 [node name="Obstacle2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 465, 71 )
-script = ExtResource( 5 )
-
-[node name="Obstacle3" parent="." instance=ExtResource( 4 )]
-position = Vector2( -117, 182 )
 script = ExtResource( 5 )
 
 [connection signal="area_shape_entered" from="PlayerPath/PlayerPathFollow/PlayerObject" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_PlayerObject_area_shape_entered"]
