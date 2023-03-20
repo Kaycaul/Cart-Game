@@ -1,4 +1,4 @@
-extends Sprite
+extends Area2D
 
 onready var path_follow = get_parent() # gets the parent (which should be a path follower) to move the player
 
@@ -25,30 +25,9 @@ func _physics_process(delta):
 	position.y = side_movement
 
 
-func _on_Obstacle_body_entered(body):
-	print("Hello there")
-	#move_speed = 0
+func collideWithObstacle():
 	$CollisionEffect.play()
-	var currentOff = path_follow.get_offset()
-	print(path_follow.get_offset())
-	position.x = position.x - 50
-	print("entering wait")
-	
-	move_speed = 0
-	accel = 0
-	yield(get_tree().create_timer(2.0),"timeout")
-	position.x = position.x + 50
-	accel = 0.5
-	move_speed = 322
-	print("exited wait")
-	
-	
-
-	pass # Replace with function body.
-
-
-func _on_Obstacle2_body_entered(body):
-	$CollisionEffect.play()
+	print ("in here 2")
 	var currentOff = path_follow.get_offset()
 	print(path_follow.get_offset())
 	position.x = position.x - 50
@@ -65,3 +44,7 @@ func _on_Obstacle2_body_entered(body):
 	print("exited wait")
 
 
+func _on_PlayerObject_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
+	if(str(area).split(":")[0].rstrip("0123456789") == "Obstacle"):
+		collideWithObstacle()
+	pass # Replace with function body.
