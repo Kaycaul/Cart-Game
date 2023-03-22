@@ -6,7 +6,7 @@ func _ready():
 	# test
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
-	for i in range(100):
+	for i in range(15):
 		spawn_obstacle(100 * i, 15 * rng.randi_range(-2,2))
 
 func spawn_obstacle(offset, lane):
