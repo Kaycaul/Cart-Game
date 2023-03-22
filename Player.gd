@@ -4,6 +4,8 @@ onready var path_follow = get_parent() # gets the parent (which should be a path
 
 export var move_speed = 1
 export var accel = 0.5
+export var MAX_SPEED = 601
+export var DEFAULT_SPEED = 100
 
 var side_movement = 0
 
@@ -19,8 +21,24 @@ func _process(_delta):
 func _physics_process(delta):
 	# moves along the path by a certain speed
 	path_follow.set_offset(path_follow.get_offset() + move_speed * delta) 
-	move_speed += accel
+	print(move_speed)
+	if move_speed < MAX_SPEED:
+		move_speed += accel
 	
+	if move_speed == 600:
+		print("I AM SPEED ")
+		$RemoteCartCamera.position.x += 2.5
+	elif move_speed == 500: 
+		print("I AM MODERATE SPEED ")
+		$RemoteCartCamera.position.x += 2.5
+	elif move_speed == 400: 
+		print("I AM GOING FAST ")
+		$RemoteCartCamera.position.x += 2.5
+	elif move_speed == 300: 
+		print("WHAT SPEED LIMIT? ")
+		$RemoteCartCamera.position.x += 2.5
+	else: 
+		print("Slow driver")
 	# move side/side on the path (up and down on the path)
 	position.y = side_movement
 
@@ -31,6 +49,8 @@ func collideWithObstacle():
 	var currentOff = path_follow.get_offset()
 	print(path_follow.get_offset())
 	position.x = position.x - 50
+	if((floor(move_speed / 100)) - 2 > 0):
+		$RemoteCartCamera.position.x -= 2.5 * ((floor(move_speed / 100)) - 2)
 	print("entering wait")
 
 	move_speed = 0
@@ -40,7 +60,7 @@ func collideWithObstacle():
 	
 	position.x = position.x + 50
 	accel = 0.5
-	move_speed = 322	
+	move_speed = DEFAULT_SPEED	
 	print("exited wait")
 
 
