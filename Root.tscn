@@ -34,32 +34,35 @@ script = ExtResource( 3 )
 position = Vector2( 833, 117 )
 rotation = 0.329448
 
-[node name="Player" type="Sprite" parent="PlayerPath/PlayerPathFollow"]
+[node name="PlayerObject" type="Area2D" parent="PlayerPath/PlayerPathFollow"]
+script = ExtResource( 2 )
+
+[node name="Player" type="Sprite" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 position = Vector2( 1.8924, -0.647064 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 1 )
-script = ExtResource( 2 )
-move_speed = 322
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="PlayerPath/PlayerPathFollow/Player"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPath/PlayerPathFollow/Player/KinematicBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+position = Vector2( 1.89233, -0.647095 )
+rotation = 1.5708
+scale = Vector2( 0.4, 0.4 )
 shape = SubResource( 2 )
 
-[node name="CollisionEffect" type="AudioStreamPlayer2D" parent="PlayerPath/PlayerPathFollow/Player"]
-position = Vector2( 396.963, 2065.14 )
-rotation = -1.90024
-scale = Vector2( 2.5, 2.5 )
+[node name="CollisionEffect" type="AudioStreamPlayer2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+position = Vector2( -824.164, 158.135 )
+rotation = -0.32944
 stream = ExtResource( 6 )
 
-[node name="RemoteCartCamera" type="RemoteTransform2D" parent="PlayerPath/PlayerPathFollow/Player"]
-position = Vector2( -0.808716, -152.365 )
+[node name="RemoteCartCamera" type="RemoteTransform2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+position = Vector2( 66.623, -2.26453 )
+rotation = 1.5708
+scale = Vector2( 0.4, 0.4 )
 remote_path = NodePath("../../../../CartCamera")
 
 [node name="CartCamera" type="Camera2D" parent="."]
-position = Vector2( 892.773, 136.411 )
-rotation = 1.90025
+position = Vector2( 896.773, 136.411 )
+rotation = 1.90024
 scale = Vector2( 0.4, 0.4 )
 rotating = true
 current = true
@@ -74,5 +77,4 @@ script = ExtResource( 5 )
 position = Vector2( 465, 71 )
 script = ExtResource( 5 )
 
-[connection signal="body_entered" from="Obstacle" to="PlayerPath/PlayerPathFollow/Player" method="_on_Obstacle_body_entered"]
-[connection signal="body_entered" from="Obstacle2" to="PlayerPath/PlayerPathFollow/Player" method="_on_Obstacle2_body_entered"]
+[connection signal="area_shape_entered" from="PlayerPath/PlayerPathFollow/PlayerObject" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_PlayerObject_area_shape_entered"]
