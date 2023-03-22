@@ -4,12 +4,12 @@
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://PathLine.gd" type="Script" id=3]
 [ext_resource path="res://Obstacle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Obstacle.gd" type="Script" id=5]
 [ext_resource path="res://explosion.wav" type="AudioStream" id=6]
-[ext_resource path="res://ObstaclePlacer.gd" type="Script" id=7]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 726, 21, -172, -157, 172, 157, 1006, 161, 195, -69, -195, 69, 998, 526, 128, 106, -128, -106, 541, 539, -150, 118, 150, -118, 560, 115, 0, 0, 0, 0, 726, 21 )
+"points": PoolVector2Array( -163.154, -55.6378, 163.154, 55.6378, 833, 117, 4.70223, -99.5087, -4.70223, 99.5087, 988, 289, 321.696, 12.0136, -321.696, -12.0136, 313, 524, -202.896, -5.33936, 202.896, 5.33936, 181, 57, -177.349, -2.24492, 177.349, 2.24492, 430, 59, 0, 0, 0, 0, 744, 92, 0, 0, 0, 0, 833, 117 )
 }
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -60,18 +60,9 @@ rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 remote_path = NodePath("../../../../CartCamera")
 
-[node name="ObstaclePlacer" type="PathFollow2D" parent="PlayerPath"]
-position = Vector2( 833, 117 )
-rotation = 0.329448
-script = ExtResource( 7 )
-obstacle_to_spawn = ExtResource( 4 )
-
-[node name="Obstacle" parent="PlayerPath" instance=ExtResource( 4 )]
-position = Vector2( 1001, 158 )
-
 [node name="CartCamera" type="Camera2D" parent="."]
 position = Vector2( 896.773, 136.411 )
-rotation = 1.90024
+rotation = 1.90025
 scale = Vector2( 0.4, 0.4 )
 rotating = true
 current = true
