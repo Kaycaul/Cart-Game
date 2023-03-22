@@ -65,6 +65,7 @@ func collideWithObstacle():
 
 
 func _on_PlayerObject_area_shape_entered(area_rid, area, area_shape_index, local_shape_index):
-	if(str(area).split(":")[0].rstrip("0123456789") == "Obstacle"):
+	print(area)
+	if(str(area).split(":")[0].rstrip("0123456789@").lstrip("@") == "Obstacle"):
 		collideWithObstacle()
 	pass # Replace with function body.
