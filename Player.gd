@@ -55,8 +55,9 @@ func collideWithObstacle():
 
 	move_speed = 0
 	accel = 0
-	yield(get_tree().create_timer(2.0),"timeout")
 	
+	#play skid animation
+	$AnimationPlayer.play("skid")
 	
 	position.x = position.x + 50
 	accel = 0.5
