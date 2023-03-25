@@ -17,4 +17,3 @@ func spawn_obstacle(offset, lane):
 	get_node("/root").call_deferred("add_child", obstacle) # error handler told me to use call_deferred, fixed everything, idk why
 	obstacle.position = position + (lane * Vector2.DOWN)
 	obstacle.rotation = rotation
-	print("spawned obstacle at " + str(position))
