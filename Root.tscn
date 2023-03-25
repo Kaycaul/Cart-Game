@@ -85,7 +85,7 @@ remote_path = NodePath("../../../../CartCamera")
 anims/skid = SubResource( 3 )
 
 [node name="ObstaclePlacer" type="PathFollow2D" parent="PlayerPath"]
-position = Vector2( 840.223, 40.0231 )
+position = Vector2( 840.228, 40.023 )
 rotation = 3.11326
 offset = 2199.32
 script = ExtResource( 7 )
