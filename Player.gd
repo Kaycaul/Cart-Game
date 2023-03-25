@@ -6,6 +6,7 @@ export var accel = 0.5
 export(Curve) var zoom_curve
 export var MAX_SPEED = 601
 export var DEFAULT_SPEED = 100
+export var CRASH_FORCE = 100 # how much the player slows down on impact
 
 var move_speed = DEFAULT_SPEED
 var side_movement = 0
@@ -45,7 +46,7 @@ func collideWithObstacle():
 	
 	position.x = position.x + 50
 	accel = 0.5
-	move_speed = DEFAULT_SPEED	
+	move_speed = max(DEFAULT_SPEED, move_speed - CRASH_FORCE)	
 
 
 func _on_PlayerObject_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
