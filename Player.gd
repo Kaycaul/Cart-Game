@@ -3,6 +3,7 @@ extends Area2D
 onready var path_follow = get_parent() # gets the parent (which should be a path follower) to move the player
 
 export var accel = 0.5
+export(Curve) var zoom_curve
 export var MAX_SPEED = 601
 export var DEFAULT_SPEED = 100
 
@@ -16,6 +17,11 @@ func _process(_delta):
 	
 	if Input.is_action_just_pressed("move_right") and side_movement < 30:
 		side_movement += 15
+
+	# set the zoom level of the camera, as a function of the current speed
+	var zoom_percent = (move_speed - DEFAULT_SPEED)/(MAX_SPEED-DEFAULT_SPEED)
+	var zoom_amount = zoom_curve.interpolate(zoom_percent) # edit the curve in the inspector to change how much you zoom
+	$CartCamera.zoom = Vector2(zoom_amount, zoom_amount)
 
 
 func _physics_process(delta):
