@@ -103,8 +103,8 @@ zoom = Vector2( 0.25, 0.25 )
 limit_smoothed = true
 
 [node name="ObstaclePlacer" type="PathFollow2D" parent="PlayerPath"]
-position = Vector2( -1735, 85 )
-rotation = -2.18288
+position = Vector2( -1735, 85.0004 )
+rotation = -2.11399
 offset = 8591.79
 script = ExtResource( 7 )
 obstacle_to_spawn = ExtResource( 4 )
