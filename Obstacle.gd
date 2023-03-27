@@ -1,16 +1,20 @@
 extends Area2D
 
+export (PackedScene) var obstacle_decoy # created when this is hit
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+# called by the player on collision
+func on_hit():
+	# use a new rigidbody to fly off the screen
+	var new_decoy = obstacle_decoy.instance()
+	new_decoy.position = position
+	new_decoy.rotation = rotation
+	new_decoy.linear_velocity = Vector2(cos(rotation), sin(rotation)) * 400 # get a vector pointing in the same direction
+	get_node("/root").call_deferred("add_child", new_decoy)
+	
+	# remove this
+	queue_free()
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Obstacle_area_shape_entered(_area_rid:RID, area:Area2D, _area_shape_index:int, _local_shape_index:int):
+	if ("Player" in str(area)):
+		# a player collided with this
+		on_hit()

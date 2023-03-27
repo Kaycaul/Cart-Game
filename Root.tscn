@@ -79,11 +79,6 @@ rotation = 1.57036
 scale = Vector2( 0.4, 0.4 )
 shape = SubResource( 2 )
 
-[node name="CollisionEffect" type="AudioStreamPlayer2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
-position = Vector2( -824.164, 158.135 )
-rotation = -0.32944
-stream = ExtResource( 6 )
-
 [node name="RemoteCartCamera" type="RemoteTransform2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 position = Vector2( 66.623, -2.26453 )
 rotation = 1.5708
@@ -102,9 +97,13 @@ current = true
 zoom = Vector2( 0.25, 0.25 )
 limit_smoothed = true
 
+[node name="CollisionEffect" type="AudioStreamPlayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+stream = ExtResource( 6 )
+volume_db = -4.37
+
 [node name="ObstaclePlacer" type="PathFollow2D" parent="PlayerPath"]
-position = Vector2( -1735, 85 )
-rotation = -2.18288
+position = Vector2( -1735, 85.0004 )
+rotation = -2.11399
 offset = 8591.79
 script = ExtResource( 7 )
 obstacle_to_spawn = ExtResource( 4 )
