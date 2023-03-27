@@ -8,7 +8,7 @@ func on_hit():
 	var new_decoy = obstacle_decoy.instance()
 	new_decoy.position = position
 	new_decoy.rotation = rotation
-	new_decoy.linear_velocity = Vector2(cos(rotation), sin(rotation)) * 400
+	new_decoy.linear_velocity = Vector2(cos(rotation), sin(rotation)) * 400 # get a vector pointing in the same direction
 	get_node("/root").call_deferred("add_child", new_decoy)
 	
 	# remove this
