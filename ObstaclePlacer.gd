@@ -7,7 +7,7 @@ export var spawner_seed = "200"
 func _ready():
 	seed(spawner_seed.hash())
 	for _i in range(obstacle_count):
-		spawn_obstacle(randf(), 15 * ((randi() % 5)-2))
+		spawn_obstacle(randf(), 15 * ((randi() % 4)-2))
 
 func spawn_obstacle(offset, lane):
 	# move along the path to the given position
