@@ -6,7 +6,7 @@
 [ext_resource path="res://Obstacle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://CoinPlacer.gd" type="Script" id=5]
 [ext_resource path="res://Player.gd" type="Script" id=6]
-[ext_resource path="res://assets/cart.png" type="Texture" id=7]
+[ext_resource path="res://boat.png" type="Texture" id=7]
 [ext_resource path="res://explosion.wav" type="AudioStream" id=8]
 [ext_resource path="res://karleton tunnel adventure2.png" type="Texture" id=9]
 [ext_resource path="res://pickupCoin.wav" type="AudioStream" id=10]

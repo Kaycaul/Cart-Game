@@ -114,6 +114,7 @@ volume_db = -18.649
 stream = ExtResource( 10 )
 
 [node name="ObstaclePlacer" type="PathFollow2D" parent="PlayerPath"]
+position = Vector2( 2158, -2390 )
 rotation = 0.667479
 script = ExtResource( 1 )
 obstacle_to_spawn = ExtResource( 4 )

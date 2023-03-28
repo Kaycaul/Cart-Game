@@ -63,8 +63,8 @@ antialiased = true
 script = ExtResource( 3 )
 
 [node name="PlayerPathFollow" type="PathFollow2D" parent="PlayerPath"]
-position = Vector2( -146.148, 584.595 )
-rotation = 0.717361
+position = Vector2( 321.746, -839.083 )
+rotation = 0.362005
 offset = 3270.51
 
 [node name="PlayerObject" type="Area2D" parent="PlayerPath/PlayerPathFollow"]
@@ -112,8 +112,8 @@ volume_db = -4.37
 stream = ExtResource( 10 )
 
 [node name="ObstaclePlacer" type="PathFollow2D" parent="PlayerPath"]
-position = Vector2( -116.66, 610.321 )
-rotation = 0.717398
+position = Vector2( 359.6, -824.405 )
+rotation = 0.379205
 offset = 3309.79
 script = ExtResource( 7 )
 obstacle_to_spawn = ExtResource( 4 )
@@ -122,7 +122,7 @@ spawner_seed = "111"
 
 [node name="CoinPlacer" type="PathFollow2D" parent="PlayerPath"]
 position = Vector2( 224, -2047 )
-rotation = 0.665255
+rotation = 0.912662
 script = ExtResource( 8 )
 Coin_scene = ExtResource( 9 )
 
