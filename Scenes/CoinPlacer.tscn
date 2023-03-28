@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/CoinPlacer.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=2]
+
+[node name="CoinPlacer" type="PathFollow2D"]
+position = Vector2( -929, -2633 )
+rotation = 1.56184
+script = ExtResource( 1 )
+Coin_scene = ExtResource( 2 )
+spawner_seed = "lmao"

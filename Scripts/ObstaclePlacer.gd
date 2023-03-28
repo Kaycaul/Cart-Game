@@ -1,13 +1,13 @@
 extends PathFollow2D
 
 export (PackedScene) var obstacle_to_spawn
-export var obstacle_count = 50
-export var spawner_seed = "100"
+export var obstacle_count = 5
+export var spawner_seed = "200"
 
 func _ready():
 	seed(spawner_seed.hash())
 	for _i in range(obstacle_count):
-		spawn_obstacle(randf(), 15 * ((randi() % 4)-2))
+		spawn_obstacle(randf(), 15 * ((randi() % 5)-2))
 
 func spawn_obstacle(offset, lane):
 	# move along the path to the given position
@@ -15,5 +15,5 @@ func spawn_obstacle(offset, lane):
 	# spawn the obstacle, but dont parent it to this
 	var obstacle = obstacle_to_spawn.instance()
 	get_node("/root").call_deferred("add_child", obstacle) # error handler told me to use call_deferred, fixed everything, idk why
-	obstacle.position = position + (lane * Vector2.DOWN)
+	obstacle.position = position + (lane * Vector2(cos(rotation + PI/2), sin(rotation + PI/2))) #YAYY
 	obstacle.rotation = rotation

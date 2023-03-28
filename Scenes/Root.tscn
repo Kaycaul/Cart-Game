@@ -1,16 +1,19 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/cart.png" type="Texture" id=1]
-[ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://PathLine.gd" type="Script" id=3]
-[ext_resource path="res://Obstacle.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/background.png" type="Texture" id=5]
-[ext_resource path="res://explosion.wav" type="AudioStream" id=6]
-[ext_resource path="res://ObstaclePlacer.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/PathLine.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Obstacle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/karleton tunnel adventure2.png" type="Texture" id=5]
+[ext_resource path="res://assets/explosion.wav" type="AudioStream" id=6]
+[ext_resource path="res://Scripts/ObstaclePlacer.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/CoinPlacer.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/pickupCoin.wav" type="AudioStream" id=10]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1434, -1752, 0, 0, 0, 0, 1234, -1662, 0, 0, 0, 0, 1061, -1350, 0, 0, 0, 0, 1088, 33, 0, 0, 0, 0, 206, 58, 0, 0, 0, 0, -50, 276, 0, 0, 0, 0, -41, 682, 0, 0, 0, 0, -32, 1073, 0, 0, 0, 0, -300, 1075, 0, 0, 0, 0, -511, 675, 0, 0, 0, 0, -30, 677, 0, 0, 0, 0, -14, 1066, 0, 0, 0, 0, -284, 1059, 0, 0, 0, 0, -522, 1463, 0, 0, 0, 0, -1318, 1468, 0, 0, 0, 0, -1325, 669, 0, 0, 0, 0, -1735, 85 )
+"points": PoolVector2Array( 0, 0, 0, 0, 224, -2047, -169.514, -50.8542, 169.514, 50.8542, 496, -1858, -16.9514, -177.99, 16.9514, 177.99, 637, -1723, 906.9, 245.795, -906.9, -245.795, 420, -1400, -711.959, -135.611, 711.959, 135.611, 90, -908, 3169.91, 813.668, -3169.91, -813.668, -404, -231, -1542.58, 93.2327, 1542.58, -93.2327, -399, 364, -262.747, -211.893, 262.747, 211.893, 87, 788, 0, 0, 0, 0, 681, 778, 0, 0, 0, 0, 715, 1972, 0, 0, 0, 0, 273, 1996, 0, 0, 0, 0, 1, 2224, 0, 0, 0, 0, -18, 2610, 0, 0, 0, 0, -478, 2613, 0, 0, 0, 0, -610, 2594, 0, 0, 0, 0, -699, 2582, 0, 0, 0, 0, -765, 2573, 0, 0, 0, 0, -789, 2559, 0, 0, 0, 0, -777, 2534, 0, 0, 0, 0, -709, 2522, 0, 0, 0, 0, -643, 2514, 0, 0, 0, 0, -538, 2520, 0, 0, 0, 0, -486, 2519, 0, 0, 0, 0, -435, 2526, 0, 0, 0, 0, -423, 2543, 0, 0, 0, 0, -434, 2568, 0, 0, 0, 0, -469, 2589, 0, 0, 0, 0, -528, 2606, 0, 0, 0, 0, -606, 2607, 0, 0, 0, 0, -681, 2607, 0, 0, 0, 0, -774, 2609, 0, 0, 0, 0, -2248, 2602, 0, 0, 0, 0, -2267, 2137, 0, 0, 0, 0, -2280, 1154, 0, 0, 0, 0, -2284, 374 )
 }
 
 [sub_resource type="Curve" id=4]
@@ -37,14 +40,17 @@ tracks/0/keys = {
 "values": [ 90.0002, 100.0, 110.0, 120.0, 110.0, 100.0, 90.0, 80.0, 70.0, 60.0, 70.0, 80.0, 90.0 ]
 }
 
-[node name="Root" type="Node"]
+[node name="Root2" type="Node"]
 
 [node name="Scenery" type="Node2D" parent="."]
 position = Vector2( 77, 207 )
 
 [node name="Background" type="Sprite" parent="Scenery"]
-position = Vector2( 521, 31 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PlayerPath" type="Path2D" parent="."]
 curve = SubResource( 1 )
@@ -57,13 +63,14 @@ antialiased = true
 script = ExtResource( 3 )
 
 [node name="PlayerPathFollow" type="PathFollow2D" parent="PlayerPath"]
-position = Vector2( 1434, -1752 )
-rotation = 2.71873
+position = Vector2( 321.746, -839.083 )
+rotation = 0.362005
+offset = 3270.51
 
 [node name="PlayerObject" type="Area2D" parent="PlayerPath/PlayerPathFollow"]
 script = ExtResource( 2 )
 zoom_curve = SubResource( 4 )
-MAX_SPEED = 700
+MAX_SPEED = 250
 DEFAULT_SPEED = 70
 CRASH_FORCE = 165
 
@@ -89,7 +96,7 @@ remote_path = NodePath("../CartCamera")
 anims/skid = SubResource( 3 )
 
 [node name="CartCamera" type="Camera2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
-position = Vector2( 66.623, -2.2644 )
+position = Vector2( 66.623, -2.26453 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 rotating = true
@@ -101,13 +108,22 @@ limit_smoothed = true
 stream = ExtResource( 6 )
 volume_db = -4.37
 
+[node name="pickupCoin1" type="AudioStreamPlayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+stream = ExtResource( 10 )
+
 [node name="ObstaclePlacer" type="PathFollow2D" parent="PlayerPath"]
-position = Vector2( -1735, 85.0004 )
-rotation = -2.11399
-offset = 8591.79
+position = Vector2( 359.6, -824.405 )
+rotation = 0.379205
+offset = 3309.79
 script = ExtResource( 7 )
 obstacle_to_spawn = ExtResource( 4 )
 obstacle_count = 75
 spawner_seed = "111"
+
+[node name="CoinPlacer" type="PathFollow2D" parent="PlayerPath"]
+position = Vector2( 224, -2047 )
+rotation = 0.912662
+script = ExtResource( 8 )
+Coin_scene = ExtResource( 9 )
 
 [connection signal="area_shape_entered" from="PlayerPath/PlayerPathFollow/PlayerObject" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_PlayerObject_area_shape_entered"]
