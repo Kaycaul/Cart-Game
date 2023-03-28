@@ -8,7 +8,7 @@ export var spawner_seed = "200"
 func _ready():
 	seed(spawner_seed.hash())
 	for _i in range(total_coins):
-		place_coin(randf(), 15 * ((randi() % 4)-2))
+		place_coin(randf(), 15 * ((randi() % 5)-2))
 
 func place_coin(offset, lane):
 	# move along the path to the given position

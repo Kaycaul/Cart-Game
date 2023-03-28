@@ -1,4 +1,4 @@
 extends Area2D
 
 func _on_Coin_area_entered(area):
-	hide()
+	queue_free()

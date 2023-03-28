@@ -38,7 +38,6 @@ func _physics_process(delta):
 func collect():
 	$pickupCoin1.play()
 	coins_collected += 1
-	print(coins_collected)	
 
 func collideWithObstacle():
 	$CollisionEffect.play()

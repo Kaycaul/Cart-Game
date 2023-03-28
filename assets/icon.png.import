@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/karleton tunnel adventure2.png-74de3ac0309baa73b21fbf49549d9b53.stex"
+path="res://.import/icon.png-b6a7fb2db36edd3d95dc42f1dc8c1c5d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://karleton tunnel adventure2.png"
-dest_files=[ "res://.import/karleton tunnel adventure2.png-74de3ac0309baa73b21fbf49549d9b53.stex" ]
+source_file="res://assets/icon.png"
+dest_files=[ "res://.import/icon.png-b6a7fb2db36edd3d95dc42f1dc8c1c5d.stex" ]
 
 [params]
 
