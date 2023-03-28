@@ -15,5 +15,5 @@ func spawn_obstacle(offset, lane):
 	# spawn the obstacle, but dont parent it to this
 	var obstacle = obstacle_to_spawn.instance()
 	get_node("/root").call_deferred("add_child", obstacle) # error handler told me to use call_deferred, fixed everything, idk why
-	obstacle.position = position + (lane * Vector2(1, 0))
+	obstacle.position = position + (lane * Vector2(cos(rotation + PI/2), sin(rotation + PI/2))) #YAYY
 	obstacle.rotation = rotation
