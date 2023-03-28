@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/cart.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://assets/background.png" type="Texture" id=5]
 [ext_resource path="res://explosion.wav" type="AudioStream" id=6]
 [ext_resource path="res://ObstaclePlacer.gd" type="Script" id=7]
+[ext_resource path="res://CoinPlacer.gd" type="Script" id=8]
+[ext_resource path="res://Coin.tscn" type="PackedScene" id=9]
+[ext_resource path="res://pickupCoin.wav" type="AudioStream" id=10]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -101,6 +104,9 @@ limit_smoothed = true
 stream = ExtResource( 6 )
 volume_db = -4.37
 
+[node name="pickupCoin1" type="AudioStreamPlayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+stream = ExtResource( 10 )
+
 [node name="ObstaclePlacer" type="PathFollow2D" parent="PlayerPath"]
 position = Vector2( -1735, 85.0004 )
 rotation = -2.11399
@@ -109,5 +115,11 @@ script = ExtResource( 7 )
 obstacle_to_spawn = ExtResource( 4 )
 obstacle_count = 75
 spawner_seed = "111"
+
+[node name="CoinPlacer" type="PathFollow2D" parent="PlayerPath"]
+position = Vector2( 1434, -1752 )
+rotation = 2.71873
+script = ExtResource( 8 )
+Coin_scene = ExtResource( 9 )
 
 [connection signal="area_shape_entered" from="PlayerPath/PlayerPathFollow/PlayerObject" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_PlayerObject_area_shape_entered"]

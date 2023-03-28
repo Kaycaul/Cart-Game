@@ -10,6 +10,7 @@ export var CRASH_FORCE = 100 # how much the player slows down on impact
 
 var move_speed = DEFAULT_SPEED
 var side_movement = 0
+var coins_collected = 0
 
 func _process(_delta):
 	# get player input and change their side_movement
@@ -34,6 +35,10 @@ func _physics_process(delta):
 	# move side/side on the path (up and down on the path)
 	position.y = side_movement
 
+func collect():
+	$pickupCoin1.play()
+	coins_collected += 1
+	print(coins_collected)	
 
 func collideWithObstacle():
 	$CollisionEffect.play()
@@ -48,7 +53,13 @@ func collideWithObstacle():
 	accel = 0.5
 	move_speed = max(DEFAULT_SPEED, move_speed - CRASH_FORCE)	
 
+var pastarea = null 
 
 func _on_PlayerObject_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
+	
 	if(str(area).split(":")[0].rstrip("0123456789@").lstrip("@") == "Obstacle"):
 		collideWithObstacle()
+	if(pastarea!=area):
+		if(str(area).split(":")[0].rstrip("0123456789@").lstrip("@") == "Coin"):
+			collect()
+			pastarea = area 
