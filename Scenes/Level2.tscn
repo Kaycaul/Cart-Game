@@ -113,8 +113,8 @@ stream = ExtResource( 10 )
 volume_db = -6.118
 
 [node name="ObstaclePlacer" parent="PlayerPath" instance=ExtResource( 1 )]
-position = Vector2( 554.244, 2267.21 )
-rotation = -3.14021
+position = Vector2( 564.478, 2267.22 )
+rotation = -3.14028
 obstacle_count = 350
 
 [node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]

@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Tunnels.jpg" type="Texture" id=1]
+[ext_resource path="res://Scripts/startScreen.gd" type="Script" id=2]
+
+[node name="startScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1025.0
+margin_bottom = 594.0
+texture = ExtResource( 1 )
+stretch_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 133.0
+margin_top = 178.0
+margin_right = 885.0
+margin_bottom = 374.0
+custom_colors/font_color_shadow = Color( 0.00392157, 0, 0, 1 )
+custom_constants/shadow_as_outline = 3
+text = "Underground Cart Adventures: Karleton Ultimate Tunnels Edition Simulator: The Final Game Part One: The Super Speed 2D game!!! Speedrunners dream (not minecraft) Non-Voxel Game Go fast!! Deception game(there is no deception hahaha deceived you )にほん 2023 Demo Difficulty: Easy (99% will FAIL!!! (can you beat it?? (you cant lol))) +日本 ベストゲーム have you ever wanted to ride a golf cart in the Karleton tunnels????? Well you can't, it's not a golf cart, it's a maintenance cart. Now you can ride it omg"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 470.0
+margin_top = 500.0
+margin_right = 40.0
+margin_bottom = 40.0
+alignment = 1
+
+[node name="start_button" type="Button" parent="VBoxContainer"]
+margin_right = 87.0
+margin_bottom = 20.0
+text = "Start game"
+
+[node name="how_to_play" type="Button" parent="VBoxContainer"]
+margin_top = 24.0
+margin_right = 87.0
+margin_bottom = 44.0
+text = "How to play"
+
+[connection signal="pressed" from="VBoxContainer/start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/how_to_play" to="." method="_on_how_to_play_pressed"]
