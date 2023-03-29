@@ -63,6 +63,8 @@ default_color = Color( 0.490196, 0.505882, 0.584314, 1 )
 antialiased = true
 script = ExtResource( 2 )
 
+[node name="Timer" type="Timer" parent="PlayerPath/PathLine"]
+
 [node name="PlayerPathFollow" type="PathFollow2D" parent="PlayerPath"]
 position = Vector2( 2158, -2390 )
 rotation = 0.667479
@@ -79,6 +81,14 @@ position = Vector2( 1.8924, -0.647064 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 7 )
+
+[node name="TimerLabel" type="Label" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+margin_left = 139.938
+margin_top = -129.392
+margin_right = 182.938
+margin_bottom = -115.392
+rect_rotation = 90.0
+align = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 position = Vector2( 1.98328, -0.752075 )
@@ -121,4 +131,5 @@ obstacle_count = 350
 position = Vector2( 2158, -2390 )
 rotation = 0.667479
 
+[connection signal="timeout" from="PlayerPath/PathLine/Timer" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_Timer_timeout"]
 [connection signal="area_shape_entered" from="PlayerPath/PlayerPathFollow/PlayerObject" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_PlayerObject_area_shape_entered"]
