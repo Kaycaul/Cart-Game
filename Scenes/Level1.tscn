@@ -41,9 +41,6 @@ tracks/0/keys = {
 
 [node name="Root" type="Node"]
 
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
 [node name="Scenery" type="Node2D" parent="."]
 position = Vector2( 77, 207 )
 
@@ -108,8 +105,6 @@ current = true
 zoom = Vector2( 0.25, 0.25 )
 limit_smoothed = true
 
-[node name="HUD" parent="PlayerPath/PlayerPathFollow/PlayerObject/CartCamera" instance=ExtResource( 4 )]
-
 [node name="CollisionEffect" type="AudioStreamPlayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 stream = ExtResource( 8 )
 volume_db = -18.649
@@ -121,10 +116,17 @@ volume_db = -6.118
 [node name="ObstaclePlacer" parent="PlayerPath" instance=ExtResource( 1 )]
 position = Vector2( 703.146, 2267.41 )
 rotation = -3.14024
-obstacle_count = 350
+obstacle_count = 100
+spawner_seed = "lol"
 
 [node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]
 position = Vector2( 2158, -2390 )
 rotation = 0.667479
+total_coins = 5
+spawner_seed = "lmaoo"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource( 4 )]
 
 [connection signal="area_shape_entered" from="PlayerPath/PlayerPathFollow/PlayerObject" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_PlayerObject_area_shape_entered"]
