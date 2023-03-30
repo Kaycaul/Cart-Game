@@ -11,7 +11,7 @@ export var CRASH_FORCE = 100 # how much the player slows down on impact
 var move_speed = DEFAULT_SPEED
 var side_movement = 0
 var coins_collected = 0
-
+var time = 0
 func _process(_delta):
 	# get player input and change their side_movement
 	if Input.is_action_just_pressed("move_left") and side_movement > -30:
@@ -34,6 +34,7 @@ func _physics_process(delta):
 	
 	# move side/side on the path (up and down on the path)
 	position.y = side_movement
+	
 
 func collect():
 	$pickupCoin1.play()
@@ -62,3 +63,18 @@ func _on_PlayerObject_area_shape_entered(_area_rid, area, _area_shape_index, _lo
 		if(str(area).split(":")[0].rstrip("0123456789@").lstrip("@") == "Coin"):
 			collect()
 			pastarea = area 
+
+
+func _on_Timer_timeout():
+	time +=1 
+	
+	var mins =floor(time/60)
+	var sec = time % 60
+	var displayTime = ""
+	if(sec < 10):
+		displayTime = (str(mins)+ ":" +"0"+ str(sec))
+	else:
+		displayTime = (str(mins)+ ":" + str(sec))
+	
+	$TimerLabel.text = displayTime
+	pass # Replace with function body.

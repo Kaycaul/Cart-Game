@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/TimerLabel.gd" type="Script" id=1]
+
+[node name="HUD" type="CanvasLayer"]
+layer = 6
+
+[node name="TimerLabel" type="Label" parent="."]
+margin_right = 31.0
+margin_bottom = 14.0
+rect_scale = Vector2( 4, 4 )
+text = "slay"
+percent_visible = -0.25
+script = ExtResource( 1 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="TimerLabel" method="_on_Timer_timeout"]
