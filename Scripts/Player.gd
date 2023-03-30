@@ -24,9 +24,7 @@ func _process(_delta):
 	var zoom_percent = (move_speed - DEFAULT_SPEED)/(MAX_SPEED-DEFAULT_SPEED)
 	var zoom_amount = zoom_curve.interpolate(zoom_percent) # edit the curve in the inspector to change how much you zoom
 	$CartCamera.zoom = Vector2(zoom_amount, zoom_amount)
-	
-	var previousTimerPosition = $TimerLabel.get_rect().position
-	$TimerLabel.set_position(Vector2($CartCamera.position.x ,$CartCamera.position.y) * $CartCamera.zoom, true)
+
 
 func _physics_process(delta):
 	# moves along the path by a certain speed
