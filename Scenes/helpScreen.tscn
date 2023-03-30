@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/Tunnels.jpg" type="Texture" id=1]
 [ext_resource path="res://assets/cart.png" type="Texture" id=2]
 [ext_resource path="res://assets/cone.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/helpScreen.gd" type="Script" id=4]
+[ext_resource path="res://assets/coin.png" type="Texture" id=5]
 
 [node name="helpScreen" type="Control"]
 anchor_right = 1.0
@@ -45,7 +46,7 @@ text = "Go back to main menu"
 position = Vector2( 263, 184 )
 texture = ExtResource( 3 )
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Cone"]
+[node name="coneDescription" type="RichTextLabel" parent="Cone"]
 margin_left = 20.0
 margin_top = -9.0
 margin_right = 354.0
@@ -53,5 +54,18 @@ margin_bottom = 31.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
 text = "Avoid the obstacles. If you hit an obstacle your speed will be reset"
+
+[node name="Coin" type="Sprite" parent="."]
+position = Vector2( 263, 252 )
+texture = ExtResource( 5 )
+
+[node name="coinDescription" type="RichTextLabel" parent="Coin"]
+margin_left = 23.0
+margin_top = -5.0
+margin_right = 357.0
+margin_bottom = 35.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 2
+text = "Collect coins to increase your score"
 
 [connection signal="pressed" from="VBoxContainer/Menu_button" to="." method="_on_Menu_button_pressed"]
