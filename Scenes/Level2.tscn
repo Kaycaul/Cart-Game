@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/explosion.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/pickupCoin.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/redcart.png" type="Texture" id=9]
-[ext_resource path="res://Scenes/EndofLevel2Area2D.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/EndofLevel2Area2D.gd" type="Script" id=10]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
