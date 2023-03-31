@@ -122,13 +122,13 @@ volume_db = -6.118
 position = Vector2( -1797.36, -245.927 )
 rotation = -1.24904
 obstacle_count = 150
-spawner_seed = "among us"
+spawner_seed = "eject "
 
 [node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]
 position = Vector2( -2080, -2114 )
 rotation = 1.55199
 total_coins = 4
-spawner_seed = "hehehe"
+spawner_seed = "impostor"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

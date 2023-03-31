@@ -122,13 +122,13 @@ volume_db = -6.118
 position = Vector2( 2300.6, 2413.99 )
 rotation = -2.43509
 obstacle_count = 50
-spawner_seed = "sus"
+spawner_seed = "wowie"
 
 [node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]
 position = Vector2( 2141, -2133 )
 rotation = -0.817381
 total_coins = 5
-spawner_seed = "hehehe"
+spawner_seed = "wowzers"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
