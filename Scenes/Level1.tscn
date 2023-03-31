@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/ObstaclePlacer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/PathLine.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/CoinPlacer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/EndOfLevelArea2D.gd" type="Script" id=5]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=6]
 [ext_resource path="res://assets/cart.png" type="Texture" id=7]
 [ext_resource path="res://assets/explosion.wav" type="AudioStream" id=8]
@@ -12,7 +13,7 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 2158, -2390, 0, 0, 0, 0, 2578, -2059, 0, 0, 0, 0, 1542, -575, 0, 0, 0, 0, 1552, 37, 0, 0, 0, 0, 2035, 456, 0, 0, 0, 0, 2632, 454, 0, 0, 0, 0, 2662, 1640, 0, 0, 0, 0, 2220, 1660, 0, 0, 0, 0, 1939, 1912, 0, 0, 0, 0, 1939, 2287, 0, 0, 0, 0, 1366, 2267, 0, 0, 0, 0, 1236, 2242, 0, 0, 0, 0, 1154, 2225, 0, 0, 0, 0, 1169, 2194, 0, 0, 0, 0, 1233, 2182, 0, 0, 0, 0, 1350, 2178, 0, 0, 0, 0, 1452, 2177, 0, 0, 0, 0, 1519, 2191, 0, 0, 0, 0, 1515, 2231, 0, 0, 0, 0, 1457, 2257, 0, 0, 0, 0, 1326, 2268, 0, 0, 0, 0, 1223, 2268, 0, 0, 0, 0, 1128, 2268, 0, 0, 0, 0, -317, 2266, 0, 0, 0, 0, -340, 30 )
+"points": PoolVector2Array( 0, 0, 0, 0, 2089, -2445, 0, 0, 0, 0, 2578, -2059, 0, 0, 0, 0, 1542, -575, 0, 0, 0, 0, 1554, 28, 0, 0, 0, 0, 2035, 456, 0, 0, 0, 0, 2632, 454, 0, 0, 0, 0, 2662, 1640, 0, 0, 0, 0, 2220, 1660, 0, 0, 0, 0, 1942, 1908, 0, 0, 0, 0, 1939, 2287, 0, 0, 0, 0, 1326, 2274, 0, 0, 0, 0, 1274, 2267, 0, 0, 0, 0, 1236, 2255, 0, 0, 0, 0, 1205, 2239, 0, 0, 0, 0, 1175, 2220, 0, 0, 0, 0, 1155, 2200, 0, 0, 0, 0, 1144, 2174, 0, 0, 0, 0, 1142, 2143, 0, 0, 0, 0, 1149, 2119, 0, 0, 0, 0, 1165, 2096, 0, 0, 0, 0, 1189, 2080, 0, 0, 0, 0, 1220, 2067, 0, 0, 0, 0, 1251, 2059, 0, 0, 0, 0, 1283, 2054, 0, 0, 0, 0, 1314, 2052, 0, 0, 0, 0, 1345, 2051, 0, 0, 0, 0, 1379, 2054, 0, 0, 0, 0, 1405, 2057, 0, 0, 0, 0, 1428, 2063, 0, 0, 0, 0, 1449, 2069, 0, 0, 0, 0, 1474, 2080, 0, 0, 0, 0, 1491, 2092, 0, 0, 0, 0, 1506, 2108, 0, 0, 0, 0, 1515, 2130, 0, 0, 0, 0, 1515, 2155, 0, 0, 0, 0, 1511, 2179, 0, 0, 0, 0, 1501, 2200, 0, 0, 0, 0, 1485, 2218, 0, 0, 0, 0, 1464, 2238, 0, 0, 0, 0, 1444, 2251, 0, 0, 0, 0, 1411, 2266, 0, 0, 0, 0, 1371, 2274, 0, 0, 0, 0, 1128, 2268, 0, 0, 0, 0, -317, 2266, 0, 0, 0, 0, -636, 2630 )
 }
 
 [sub_resource type="Curve" id=4]
@@ -38,6 +39,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 90.0002, 100.0, 110.0, 120.0, 110.0, 100.0, 90.0, 80.0, 70.0, 60.0, 70.0, 80.0, 90.0 ]
 }
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 54.7087, 48.5215 )
 
 [node name="Root" type="Node"]
 
@@ -65,11 +69,14 @@ antialiased = true
 script = ExtResource( 2 )
 
 [node name="PlayerPathFollow" type="PathFollow2D" parent="PlayerPath"]
-position = Vector2( 2158, -2390 )
-rotation = 0.667479
+position = Vector2( 2089, -2445 )
+rotation = 0.668238
 
 [node name="PlayerObject" type="Area2D" parent="PlayerPath/PlayerPathFollow"]
 script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
 zoom_curve = SubResource( 4 )
 MAX_SPEED = 250
 DEFAULT_SPEED = 70
@@ -97,7 +104,7 @@ remote_path = NodePath("../CartCamera")
 anims/skid = SubResource( 3 )
 
 [node name="CartCamera" type="Camera2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
-position = Vector2( 66.6228, -2.26465 )
+position = Vector2( 66.6232, -2.26465 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 rotating = true
@@ -114,19 +121,31 @@ stream = ExtResource( 10 )
 volume_db = -6.118
 
 [node name="ObstaclePlacer" parent="PlayerPath" instance=ExtResource( 1 )]
-position = Vector2( 703.146, 2267.41 )
-rotation = -3.14024
+position = Vector2( 961.429, 2267.77 )
+rotation = -3.14019
 obstacle_count = 100
-spawner_seed = "lol"
+spawner_seed = "among us"
 
 [node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]
-position = Vector2( 2158, -2390 )
-rotation = 0.667479
+position = Vector2( 2089, -2445 )
+rotation = 0.668238
 total_coins = 5
-spawner_seed = "lmaoo"
+spawner_seed = "hehehe"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 4 )]
 
+[node name="EndOfLevel1Area2D" type="Area2D" parent="."]
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndOfLevel1Area2D"]
+position = Vector2( -664.62, 2664.35 )
+rotation = -0.87441
+shape = SubResource( 5 )
+
 [connection signal="area_shape_entered" from="PlayerPath/PlayerPathFollow/PlayerObject" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_PlayerObject_area_shape_entered"]
+[connection signal="area_shape_entered" from="EndOfLevel1Area2D" to="EndOfLevel1Area2D" method="_on_EndOfLevel1Area2D_area_shape_entered"]
