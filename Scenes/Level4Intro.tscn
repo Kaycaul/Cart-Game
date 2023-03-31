@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Level4Button.gd" type="Script" id=1]
+[ext_resource path="res://assets/IMG_2177.jpg" type="Texture" id=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.545098, 0.545098, 0.545098, 1 )
+margin_left = -27.0
+margin_top = -17.0
+margin_right = 14383.0
+margin_bottom = 6253.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Label" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 417.0
+margin_top = 46.0
+margin_right = -561.0
+margin_bottom = 60.0
+rect_scale = Vector2( 4, 4 )
+text = "Level 4"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -447.0
+margin_top = -163.0
+margin_right = 6.0
+margin_bottom = -31.0
+rect_scale = Vector2( 2, 2 )
+text = "After barely surviving Glen House, you decide to drop out of Karleon and just do extreme sports.
+
+You want to take the boat you made in engineering class for a test ride in the large body of water beside Karleton (which is full of cones for some reason).
+
+have fun and don't crash"
+
+[node name="Level4Button" type="Button" parent="."]
+margin_left = 392.0
+margin_top = 461.0
+margin_right = 508.0
+margin_bottom = 491.0
+rect_scale = Vector2( 2, 2 )
+text = "Start level 4"
+script = ExtResource( 1 )
+
+[connection signal="pressed" from="Level4Button" to="Level4Button" method="_on_Level4Button_pressed"]

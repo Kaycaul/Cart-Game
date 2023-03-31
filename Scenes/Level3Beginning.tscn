@@ -1,0 +1,149 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/PathLine.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/CoinPlacer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/ObstaclePlacer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/karleton tunnel adventure2.png" type="Texture" id=6]
+[ext_resource path="res://assets/explosion.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/pickupCoin.wav" type="AudioStream" id=8]
+[ext_resource path="res://assets/cart.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/BeginningOfLevel3Area2D.gd" type="Script" id=10]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 2031, -2501, 0, 0, 0, 0, 2576, -2061, 0, 0, 0, 0, 1892, -1073, 0, 0, 0, 0, 2547, -631 )
+}
+
+[sub_resource type="Curve" id=4]
+min_value = 0.25
+max_value = 0.55
+_data = [ Vector2( 0, 0.25 ), 0.0, 0.0, 0, 0, Vector2( 0.333333, 0.281818 ), 0.279379, 0.279379, 0, 0, Vector2( 1, 0.506364 ), 0.0636364, 0.0, 0, 0 ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.1401, 17.8391 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "skid"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 90.0002, 100.0, 110.0, 120.0, 110.0, 100.0, 90.0, 80.0, 70.0, 60.0, 70.0, 80.0, 90.0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 47.7212, 43.9307 )
+
+[node name="Root" type="Node"]
+
+[node name="Scenery" type="Node2D" parent="."]
+position = Vector2( 77, 207 )
+
+[node name="Background" type="Sprite" parent="Scenery"]
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PlayerPath" type="Path2D" parent="."]
+curve = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="PathLine" type="Line2D" parent="PlayerPath"]
+position = Vector2( 1, 0 )
+width = 80.0
+default_color = Color( 0.490196, 0.505882, 0.584314, 1 )
+antialiased = true
+script = ExtResource( 2 )
+
+[node name="PlayerPathFollow" type="PathFollow2D" parent="PlayerPath"]
+position = Vector2( 2031, -2501 )
+rotation = 0.679194
+
+[node name="PlayerObject" type="Area2D" parent="PlayerPath/PlayerPathFollow"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+zoom_curve = SubResource( 4 )
+MAX_SPEED = 250
+DEFAULT_SPEED = 70
+CRASH_FORCE = 165
+
+[node name="Player" type="Sprite" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+position = Vector2( 1.8924, -0.647064 )
+rotation = 1.5708
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+position = Vector2( 1.98328, -0.752075 )
+rotation = 1.57036
+scale = Vector2( 0.4, 0.4 )
+shape = SubResource( 2 )
+
+[node name="RemoteCartCamera" type="RemoteTransform2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+position = Vector2( 66.623, -2.26453 )
+rotation = 1.5708
+scale = Vector2( 0.4, 0.4 )
+remote_path = NodePath("../CartCamera")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+anims/skid = SubResource( 3 )
+
+[node name="CartCamera" type="Camera2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+position = Vector2( 66.6229, -2.26416 )
+rotation = 1.5708
+scale = Vector2( 0.4, 0.4 )
+rotating = true
+current = true
+zoom = Vector2( 0.25, 0.25 )
+limit_smoothed = true
+
+[node name="CollisionEffect" type="AudioStreamPlayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+stream = ExtResource( 7 )
+volume_db = -18.649
+
+[node name="pickupCoin1" type="AudioStreamPlayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+stream = ExtResource( 8 )
+volume_db = -6.118
+
+[node name="ObstaclePlacer" parent="PlayerPath" instance=ExtResource( 5 )]
+position = Vector2( 2547, -631 )
+rotation = 0.0
+obstacle_count = 20
+spawner_seed = "among us"
+
+[node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]
+position = Vector2( 2031, -2501 )
+rotation = 0.679194
+total_coins = 1
+spawner_seed = "hehehe"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource( 4 )]
+
+[node name="BeginningOfLevel3Area2D" type="Area2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BeginningOfLevel3Area2D"]
+position = Vector2( 2576.21, -607.035 )
+rotation = 0.656244
+scale = Vector2( 1, 1 )
+shape = SubResource( 5 )
+
+[connection signal="area_shape_entered" from="PlayerPath/PlayerPathFollow/PlayerObject" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_PlayerObject_area_shape_entered"]
+[connection signal="area_shape_entered" from="BeginningOfLevel3Area2D" to="BeginningOfLevel3Area2D" method="_on_BeginningOfLevel3Area2D_area_shape_entered"]
