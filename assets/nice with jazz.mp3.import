@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/nice with jazz.mp3-dc06e95770a531ac278155c6b5501ad1.mp3str"
+
+[deps]
+
+source_file="res://assets/nice with jazz.mp3"
+dest_files=[ "res://.import/nice with jazz.mp3-dc06e95770a531ac278155c6b5501ad1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

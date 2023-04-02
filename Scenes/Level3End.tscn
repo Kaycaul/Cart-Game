@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PathLine.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/cart.png" type="Texture" id=8]
 [ext_resource path="res://assets/karleton tunnel adventure3.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/EndOfLevel3Area2D.gd" type="Script" id=10]
+[ext_resource path="res://assets/awful with trumpet.mp3" type="AudioStream" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -112,11 +113,11 @@ limit_smoothed = true
 
 [node name="CollisionEffect" type="AudioStreamPlayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 stream = ExtResource( 6 )
-volume_db = -18.649
+volume_db = -40.0
 
 [node name="pickupCoin1" type="AudioStreamPlayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 stream = ExtResource( 7 )
-volume_db = -6.118
+volume_db = -30.0
 
 [node name="ObstaclePlacer" parent="PlayerPath" instance=ExtResource( 4 )]
 position = Vector2( -1797.36, -245.927 )
@@ -140,6 +141,11 @@ script = ExtResource( 10 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndOfLevel3Area2D"]
 position = Vector2( -397, -72 )
 shape = SubResource( 5 )
+
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -30.0
+autoplay = true
 
 [connection signal="area_shape_entered" from="PlayerPath/PlayerPathFollow/PlayerObject" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_PlayerObject_area_shape_entered"]
 [connection signal="area_shape_entered" from="EndOfLevel3Area2D" to="EndOfLevel3Area2D" method="_on_EndOfLevel3Area2D_area_shape_entered"]

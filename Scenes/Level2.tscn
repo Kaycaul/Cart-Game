@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PathLine.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/pickupCoin.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/redcart.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/EndofLevel2Area2D.gd" type="Script" id=10]
+[ext_resource path="res://assets/nice with jazz.mp3" type="AudioStream" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -70,7 +71,7 @@ script = ExtResource( 2 )
 
 [node name="PlayerPathFollow" type="PathFollow2D" parent="PlayerPath"]
 position = Vector2( 2031, -2501 )
-rotation = 0.679194
+rotation = 0.679498
 
 [node name="PlayerObject" type="Area2D" parent="PlayerPath/PlayerPathFollow"]
 script = ExtResource( 1 )
@@ -104,7 +105,7 @@ remote_path = NodePath("../CartCamera")
 anims/skid = SubResource( 3 )
 
 [node name="CartCamera" type="Camera2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
-position = Vector2( 66.6229, -2.26416 )
+position = Vector2( 66.623, -2.26465 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 rotating = true
@@ -114,21 +115,21 @@ limit_smoothed = true
 
 [node name="CollisionEffect" type="AudioStreamPlayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 stream = ExtResource( 7 )
-volume_db = -18.649
+volume_db = -40.0
 
 [node name="pickupCoin1" type="AudioStreamPlayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 stream = ExtResource( 8 )
-volume_db = -6.118
+volume_db = -30.0
 
 [node name="ObstaclePlacer" parent="PlayerPath" instance=ExtResource( 5 )]
-position = Vector2( -1420.82, 2795.57 )
-rotation = -3.13897
+position = Vector2( -1464.05, 2796.87 )
+rotation = -3.14056
 obstacle_count = 200
 spawner_seed = "emergency "
 
 [node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]
 position = Vector2( 2031, -2501 )
-rotation = 0.679194
+rotation = 0.679498
 total_coins = 5
 spawner_seed = "meeting "
 
@@ -145,6 +146,11 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EndofLevel2Area2D"]
 position = Vector2( -348.5, -471 )
 shape = SubResource( 5 )
+
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -30.0
+autoplay = true
 
 [connection signal="area_shape_entered" from="PlayerPath/PlayerPathFollow/PlayerObject" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_PlayerObject_area_shape_entered"]
 [connection signal="area_shape_entered" from="EndofLevel2Area2D" to="EndofLevel2Area2D" method="_on_EndofLevel2Area2D_area_shape_entered"]

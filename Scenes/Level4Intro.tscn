@@ -1,8 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/Level4Button.gd" type="Script" id=1]
 [ext_resource path="res://assets/IMG_2177.jpg" type="Texture" id=2]
-
+[ext_resource path="res://assets/karleton crest.png" type="Texture" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -21,6 +21,17 @@ margin_bottom = 6253.0
 rect_scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 expand = true
+
+[node name="Karleton Logo" type="TextureRect" parent="."]
+modulate = Color( 0.556863, 0.203922, 0.203922, 1 )
+self_modulate = Color( 0.729412, 0.109804, 0.109804, 1 )
+margin_left = 396.0
+margin_top = 186.0
+margin_right = 796.0
+margin_bottom = 586.0
+rect_rotation = -10.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 anchor_right = 1.0
