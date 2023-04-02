@@ -34,11 +34,12 @@ func _physics_process(delta):
 	
 	# move side/side on the path (up and down on the path)
 	position.y = side_movement
-	
+	$CanvasLayer/HUD/SpeedLabel2.text = str(floor(move_speed))
 
 func collect():
 	$pickupCoin1.play()
 	coins_collected += 1
+	$CanvasLayer/HUD/CoinLabel.text = str(coins_collected)
 
 func collideWithObstacle():
 	$CollisionEffect.play()

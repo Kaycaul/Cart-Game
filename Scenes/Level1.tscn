@@ -28,7 +28,7 @@ extents = Vector2( 12.1401, 17.8391 )
 resource_name = "skid"
 length = 1.3
 tracks/0/type = "value"
-tracks/0/path = NodePath("Player:rotation_degrees")
+tracks/0/path = NodePath("Player1:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -82,7 +82,7 @@ MAX_SPEED = 250
 DEFAULT_SPEED = 70
 CRASH_FORCE = 165
 
-[node name="Player" type="Sprite" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+[node name="Player1" type="Sprite" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 position = Vector2( 1.8924, -0.647064 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
@@ -120,6 +120,10 @@ volume_db = -18.649
 stream = ExtResource( 10 )
 volume_db = -6.118
 
+[node name="CanvasLayer" type="CanvasLayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+
+[node name="HUD" parent="PlayerPath/PlayerPathFollow/PlayerObject/CanvasLayer" instance=ExtResource( 4 )]
+
 [node name="ObstaclePlacer" parent="PlayerPath" instance=ExtResource( 1 )]
 position = Vector2( 961.429, 2267.77 )
 rotation = -3.14019
@@ -131,10 +135,6 @@ position = Vector2( 2089, -2445 )
 rotation = 0.668238
 total_coins = 5
 spawner_seed = "hehehe"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HUD" parent="CanvasLayer" instance=ExtResource( 4 )]
 
 [node name="EndOfLevel1Area2D" type="Area2D" parent="."]
 script = ExtResource( 5 )

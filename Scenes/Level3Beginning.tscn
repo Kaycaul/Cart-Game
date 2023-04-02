@@ -120,6 +120,10 @@ volume_db = -18.649
 stream = ExtResource( 8 )
 volume_db = -6.118
 
+[node name="CanvasLayer" type="CanvasLayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+
+[node name="HUD" parent="PlayerPath/PlayerPathFollow/PlayerObject/CanvasLayer" instance=ExtResource( 4 )]
+
 [node name="ObstaclePlacer" parent="PlayerPath" instance=ExtResource( 5 )]
 position = Vector2( 2547, -631 )
 rotation = 0.0
@@ -131,10 +135,6 @@ position = Vector2( 2031, -2501 )
 rotation = 0.679194
 total_coins = 1
 spawner_seed = ":0"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HUD" parent="CanvasLayer" instance=ExtResource( 4 )]
 
 [node name="BeginningOfLevel3Area2D" type="Area2D" parent="."]
 script = ExtResource( 10 )
