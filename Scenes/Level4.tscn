@@ -75,10 +75,11 @@ rotation = -0.817381
 
 [node name="PlayerObject" type="Area2D" parent="PlayerPath/PlayerPathFollow"]
 script = ExtResource( 1 )
+accel = 0.38
 zoom_curve = SubResource( 4 )
-MAX_SPEED = 450
+MAX_SPEED = 500
 DEFAULT_SPEED = 70
-CRASH_FORCE = 165
+CRASH_FORCE = 210
 
 [node name="Player" type="Sprite" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 position = Vector2( 1.8924, -0.647064 )

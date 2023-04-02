@@ -77,10 +77,11 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+accel = 0.26
 zoom_curve = SubResource( 4 )
-MAX_SPEED = 250
+MAX_SPEED = 500
 DEFAULT_SPEED = 70
-CRASH_FORCE = 165
+CRASH_FORCE = 175
 
 [node name="CanvasLayer" type="CanvasLayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 
