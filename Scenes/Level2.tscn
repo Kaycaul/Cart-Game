@@ -44,7 +44,7 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 39.5, 49 )
 
-[node name="Root" type="Node"]
+[node name="Root2" type="Node"]
 
 [node name="Scenery" type="Node2D" parent="."]
 position = Vector2( 77, 207 )

@@ -49,4 +49,6 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+limits/buffers/canvas_polygon_buffer_size_kb=2048
+limits/buffers/canvas_polygon_index_buffer_size_kb=2048
 environment/default_environment="res://default_env.tres"
