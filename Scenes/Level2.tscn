@@ -82,6 +82,10 @@ MAX_SPEED = 250
 DEFAULT_SPEED = 70
 CRASH_FORCE = 165
 
+[node name="CanvasLayer" type="CanvasLayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+
+[node name="HUD" parent="PlayerPath/PlayerPathFollow/PlayerObject/CanvasLayer" instance=ExtResource( 4 )]
+
 [node name="Player" type="Sprite" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 position = Vector2( 1.8924, -0.647064 )
 rotation = 1.5708
@@ -131,10 +135,6 @@ position = Vector2( 2031, -2501 )
 rotation = 0.679498
 total_coins = 5
 spawner_seed = "meeting "
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="HUD" parent="CanvasLayer" instance=ExtResource( 4 )]
 
 [node name="EndofLevel2Area2D" type="Area2D" parent="."]
 script = ExtResource( 10 )
