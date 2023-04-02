@@ -70,7 +70,7 @@ script = ExtResource( 2 )
 
 [node name="PlayerPathFollow" type="PathFollow2D" parent="PlayerPath"]
 position = Vector2( 2089, -2445 )
-rotation = 0.668238
+rotation = 0.666838
 
 [node name="PlayerObject" type="Area2D" parent="PlayerPath/PlayerPathFollow"]
 script = ExtResource( 6 )
@@ -104,7 +104,7 @@ remote_path = NodePath("../CartCamera")
 anims/skid = SubResource( 3 )
 
 [node name="CartCamera" type="Camera2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
-position = Vector2( 66.6232, -2.26465 )
+position = Vector2( 66.623, -2.26465 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 rotating = true
@@ -121,14 +121,14 @@ stream = ExtResource( 10 )
 volume_db = -6.118
 
 [node name="ObstaclePlacer" parent="PlayerPath" instance=ExtResource( 1 )]
-position = Vector2( 961.429, 2267.77 )
-rotation = -3.14019
+position = Vector2( 936.613, 2267.58 )
+rotation = -3.13937
 obstacle_count = 100
 spawner_seed = "among us"
 
 [node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]
 position = Vector2( 2089, -2445 )
-rotation = 0.668238
+rotation = 0.666838
 total_coins = 5
 spawner_seed = "hehehe"
 
