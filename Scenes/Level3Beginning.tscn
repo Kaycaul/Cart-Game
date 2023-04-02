@@ -9,11 +9,11 @@
 [ext_resource path="res://assets/explosion.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/pickupCoin.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/cart.png" type="Texture" id=9]
-[ext_resource path="res://Scenes/BeginningOfLevel3Area2D.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/BeginningOfLevel3Area2D.gd" type="Script" id=10]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 2031, -2501, 0, 0, 0, 0, 2576, -2061, 0, 0, 0, 0, 1892, -1073, 0, 0, 0, 0, 2547, -631 )
+"points": PoolVector2Array( 0, 0, 0, 0, 2031, -2501, 0, 0, 0, 0, 2529, -2099, -0.561231, -18.5206, 0.561231, 18.5206, 2563, -2058, 0, 0, 0, 0, 2540, -2010, 0, 0, 0, 0, 1932, -1132, -2.77795, -20.2394, 2.77795, 20.2394, 1911, -1078, 0, 0, 0, 0, 1941, -1038, 0, 0, 0, 0, 2547, -631 )
 }
 
 [sub_resource type="Curve" id=4]
@@ -70,7 +70,7 @@ script = ExtResource( 2 )
 
 [node name="PlayerPathFollow" type="PathFollow2D" parent="PlayerPath"]
 position = Vector2( 2031, -2501 )
-rotation = 0.679194
+rotation = 0.679033
 
 [node name="PlayerObject" type="Area2D" parent="PlayerPath/PlayerPathFollow"]
 script = ExtResource( 1 )
@@ -104,7 +104,7 @@ remote_path = NodePath("../CartCamera")
 anims/skid = SubResource( 3 )
 
 [node name="CartCamera" type="Camera2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
-position = Vector2( 66.6229, -2.26416 )
+position = Vector2( 66.623, -2.2644 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 rotating = true
@@ -132,7 +132,7 @@ spawner_seed = "sus"
 
 [node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]
 position = Vector2( 2031, -2501 )
-rotation = 0.679194
+rotation = 0.679033
 total_coins = 1
 spawner_seed = ":0"
 

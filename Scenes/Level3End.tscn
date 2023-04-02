@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/pickupCoin.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/cart.png" type="Texture" id=8]
 [ext_resource path="res://assets/karleton tunnel adventure3.png" type="Texture" id=9]
-[ext_resource path="res://Scenes/EndOfLevel3Area2D.gd" type="Script" id=10]
+[ext_resource path="res://Scripts/EndOfLevel3Area2D.gd" type="Script" id=10]
 
 [sub_resource type="Curve2D" id=1]
 _data = {

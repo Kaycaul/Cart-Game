@@ -8,7 +8,7 @@
 [ext_resource path="res://assets/explosion.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/pickupCoin.wav" type="AudioStream" id=7]
 [ext_resource path="res://assets/boat.png" type="Texture" id=8]
-[ext_resource path="res://Scenes/EndOfLevel4Area2D.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/EndOfLevel4Area2D.gd" type="Script" id=9]
 [ext_resource path="res://assets/karleton tunnel adventure3.png" type="Texture" id=10]
 
 [sub_resource type="Curve2D" id=1]
