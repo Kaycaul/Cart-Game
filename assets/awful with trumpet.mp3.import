@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/awful with trumpet.mp3-af43143c540ddf3986157ae6d15c7b00.mp3str"
+
+[deps]
+
+source_file="res://assets/awful with trumpet.mp3"
+dest_files=[ "res://.import/awful with trumpet.mp3-af43143c540ddf3986157ae6d15c7b00.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

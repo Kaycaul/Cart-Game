@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PathLine.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://assets/pickupCoin.wav" type="AudioStream" id=8]
 [ext_resource path="res://assets/cart.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/BeginningOfLevel3Area2D.gd" type="Script" id=10]
+[ext_resource path="res://assets/nice with jazz.mp3" type="AudioStream" id=11]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -115,11 +116,11 @@ limit_smoothed = true
 
 [node name="CollisionEffect" type="AudioStreamPlayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 stream = ExtResource( 7 )
-volume_db = -18.649
+volume_db = -40.0
 
 [node name="pickupCoin1" type="AudioStreamPlayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 stream = ExtResource( 8 )
-volume_db = -6.118
+volume_db = -30.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 
@@ -144,6 +145,12 @@ script = ExtResource( 10 )
 position = Vector2( 2576.21, -607.035 )
 rotation = 0.656244
 shape = SubResource( 5 )
+
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -30.0
+pitch_scale = 0.5
+autoplay = true
 
 [connection signal="area_shape_entered" from="PlayerPath/PlayerPathFollow/PlayerObject" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_PlayerObject_area_shape_entered"]
 [connection signal="area_shape_entered" from="BeginningOfLevel3Area2D" to="BeginningOfLevel3Area2D" method="_on_BeginningOfLevel3Area2D_area_shape_entered"]
