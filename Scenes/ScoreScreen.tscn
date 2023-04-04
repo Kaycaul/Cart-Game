@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/WebRes_IMG_16770-450.width-1280.format-jpeg.jpg" type="Texture" id=1]
 [ext_resource path="res://assets/dogicapixelbold.ttf" type="DynamicFontData" id=3]
@@ -7,23 +7,28 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 43
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 24
-outline_size = 2
+outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 24
-outline_size = 2
+outline_size = 4
 outline_color = Color( 0.0352941, 0.0352941, 0.0352941, 1 )
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 24
-outline_size = 2
+outline_size = 4
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 5 )
 
@@ -31,7 +36,7 @@ font_data = ExtResource( 5 )
 font_path = "res://assets/dogicapixel.ttf"
 
 [sub_resource type="DynamicFont" id=6]
-outline_size = 2
+outline_size = 3
 outline_color = Color( 0.0196078, 0.00392157, 0.00392157, 1 )
 font_data = SubResource( 5 )
 
@@ -39,7 +44,7 @@ font_data = SubResource( 5 )
 font_path = "res://assets/dogicapixel.ttf"
 
 [sub_resource type="DynamicFont" id=8]
-outline_size = 2
+outline_size = 3
 outline_color = Color( 0.0392157, 0.00392157, 0.00392157, 1 )
 font_data = SubResource( 7 )
 
@@ -47,7 +52,7 @@ font_data = SubResource( 7 )
 font_path = "res://assets/dogicapixel.ttf"
 
 [sub_resource type="DynamicFont" id=10]
-outline_size = 2
+outline_size = 3
 outline_color = Color( 0.0352941, 0.00392157, 0.00392157, 1 )
 font_data = SubResource( 9 )
 
@@ -68,18 +73,19 @@ __meta__ = {
 }
 
 [node name="Score" type="RichTextLabel" parent="."]
-margin_left = 384.0
+margin_left = 368.0
 margin_top = 16.0
-margin_right = 629.0
-margin_bottom = 56.0
+margin_right = 613.0
+margin_bottom = 96.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "Score:"
 
 [node name="Next level" type="Button" parent="."]
-margin_left = 390.0
-margin_top = 531.0
-margin_right = 584.0
-margin_bottom = 586.0
+margin_left = 384.0
+margin_top = 536.0
+margin_right = 578.0
+margin_bottom = 570.0
+custom_fonts/font = SubResource( 11 )
 text = "Next Level"
 
 [node name="TotalScoreText" type="RichTextLabel" parent="."]
