@@ -14,6 +14,10 @@ config/name="Cart Game"
 run/main_scene="res://Scenes/startScreen.tscn"
 config/icon="res://assets/icon.png"
 
+[autoload]
+
+Global="*res://Scripts/GlobalVariables.gd"
+
 [display]
 
 window/stretch/mode="viewport"
