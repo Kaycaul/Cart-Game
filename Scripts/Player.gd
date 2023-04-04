@@ -8,6 +8,9 @@ export var MAX_SPEED = 601
 export var DEFAULT_SPEED = 100
 export var CRASH_FORCE = 100 # how much the player slows down on impact
 
+
+var immune = false
+var immuneTime = 0
 var move_speed = DEFAULT_SPEED
 var side_movement = 0
 var desired_side_movement = 0;
@@ -43,6 +46,9 @@ func _physics_process(delta):
 	position.y = side_movement
 	$CanvasLayer/HUD/SpeedLabel2.text = str(floor(move_speed))
 
+	if immune && immuneTime + 2 == get_node("/root/Global").levelTime : 
+		immune = false
+
 func collect():
 	$pickupCoin1.play()
 	coins_collected += 1
@@ -65,24 +71,12 @@ var pastarea = null
 
 func _on_PlayerObject_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
 	
-	if(str(area).split(":")[0].rstrip("0123456789@").lstrip("@") == "Obstacle"):
+	if(str(area).split(":")[0].rstrip("0123456789@").lstrip("@") == "Obstacle" && !immune):
 		collideWithObstacle()
+		immuneTime = get_node("/root/Global").levelTime
+		immune = true
+		
 	if(pastarea!=area):
 		if(str(area).split(":")[0].rstrip("0123456789@").lstrip("@") == "Coin"):
 			collect()
 			pastarea = area 
-
-
-func _on_Timer_timeout():
-	time +=1 
-	
-	var mins =floor(time/60)
-	var sec = time % 60
-	var displayTime = ""
-	if(sec < 10):
-		displayTime = (str(mins)+ ":" +"0"+ str(sec))
-	else:
-		displayTime = (str(mins)+ ":" + str(sec))
-	
-	$TimerLabel.text = displayTime
-	pass # Replace with function body.
