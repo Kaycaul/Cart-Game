@@ -73,7 +73,7 @@ margin_bottom = 49.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
 custom_fonts/normal_font = SubResource( 1 )
-text = "To move press the left arrow key & right arrow key. As you avoid obstacles, your speed will increase"
+text = "Move left and right with the arrow keys or wasd. As you avoid obstacles, your speed will increase."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_top = -0.271
@@ -103,7 +103,7 @@ margin_bottom = 29.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
 custom_fonts/normal_font = SubResource( 2 )
-text = "Avoid the obstacles. If you hit an obstacle your speed will be lowered"
+text = "Avoid the obstacles. If you hit an obstacle your speed will be lowered."
 
 [node name="Coin" type="Sprite" parent="."]
 position = Vector2( 320, 270 )
@@ -127,7 +127,7 @@ margin_bottom = 371.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
 custom_fonts/normal_font = SubResource( 4 )
-text = "Remember to protect yourself in Hell. Bring sunscreen
+text = "Remember to protect yourself in Hell. Bring sunscreen.
 "
 
 [node name="Tip2" type="RichTextLabel" parent="."]
@@ -138,7 +138,7 @@ margin_bottom = 451.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
 custom_fonts/normal_font = SubResource( 5 )
-text = "Bring some waterproof clothes..... just in case
+text = "Bring some waterproof clothes..... just in case.
 "
 
 [connection signal="pressed" from="VBoxContainer/Menu_button" to="." method="_on_Menu_button_pressed"]
