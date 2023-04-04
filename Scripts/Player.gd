@@ -10,15 +10,16 @@ export var CRASH_FORCE = 100 # how much the player slows down on impact
 
 var move_speed = DEFAULT_SPEED
 var side_movement = 0
+var desired_side_movement = 0;
 var coins_collected = 0
 var time = 0
 func _process(_delta):
-	# get player input and change their side_movement
-	if Input.is_action_just_pressed("move_left") and side_movement > -30:
-		side_movement -= 15
+	# get player input and change their desired_side_movement
+	if Input.is_action_just_pressed("move_left") and desired_side_movement > -30:
+		desired_side_movement -= 15
 	
-	if Input.is_action_just_pressed("move_right") and side_movement < 30:
-		side_movement += 15
+	if Input.is_action_just_pressed("move_right") and desired_side_movement < 30:
+		desired_side_movement += 15
 
 	# set the zoom level of the camera, as a function of the current speed
 	var zoom_percent = (move_speed - DEFAULT_SPEED)/(MAX_SPEED-DEFAULT_SPEED)
@@ -33,6 +34,12 @@ func _physics_process(delta):
 		move_speed += accel
 	
 	# move side/side on the path (up and down on the path)
+	if abs(desired_side_movement - side_movement) < 1:
+		# you are close enough
+		side_movement = desired_side_movement
+	else:
+		# move closer to the desired side movement
+		side_movement = lerp(side_movement, desired_side_movement, 0.5)
 	position.y = side_movement
 	$CanvasLayer/HUD/SpeedLabel2.text = str(floor(move_speed))
 
