@@ -1,6 +1,6 @@
 extends Label
 
-var time = 0
+export var time = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,3 +19,5 @@ func _on_Timer_timeout():
 		displayTime = (str(mins)+ ":" + str(sec))
 	
 	text = displayTime
+	var global = get_node("/root/Global")
+	global.levelTime = time

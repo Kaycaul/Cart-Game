@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/Tunnels.jpg" type="Texture" id=1]
 [ext_resource path="res://assets/cart.png" type="Texture" id=2]
@@ -6,14 +6,35 @@
 [ext_resource path="res://Scripts/helpScreen.gd" type="Script" id=4]
 [ext_resource path="res://assets/coin.png" type="Texture" id=5]
 [ext_resource path="res://assets/karleton tunnel adventure2.png" type="Texture" id=6]
+[ext_resource path="res://assets/dogicapixel.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 12
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 12
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 12
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 12
+font_data = ExtResource( 7 )
 
 [node name="helpScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.0
-margin_top = -2.0
-margin_right = 1.0
-margin_bottom = -2.0
+margin_left = -3.0
+margin_top = 3.0
+margin_right = -3.0
+margin_bottom = 3.0
 script = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -29,18 +50,22 @@ __meta__ = {
 position = Vector2( 712.203, 275.297 )
 scale = Vector2( 0.151466, 0.132668 )
 texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Cart" type="Sprite" parent="."]
-position = Vector2( 48, 40 )
+position = Vector2( 38, 66 )
 texture = ExtResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Cart"]
 margin_left = 24.0
 margin_top = -5.0
-margin_right = 358.0
-margin_bottom = 35.0
+margin_right = 362.0
+margin_bottom = 49.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
+custom_fonts/normal_font = SubResource( 1 )
 text = "To move press the left arrow key & right arrow key. As you avoid obstacles, your speed will increase"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -59,48 +84,52 @@ margin_bottom = 51.0
 text = "Go back to main menu"
 
 [node name="Cone" type="Sprite" parent="."]
-position = Vector2( 49, 107 )
+position = Vector2( 40, 178 )
 texture = ExtResource( 3 )
 
 [node name="coneDescription" type="RichTextLabel" parent="Cone"]
-margin_left = 20.0
-margin_top = -9.0
-margin_right = 354.0
-margin_bottom = 31.0
+margin_left = 19.0
+margin_top = -11.0
+margin_right = 353.0
+margin_bottom = 29.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
+custom_fonts/normal_font = SubResource( 2 )
 text = "Avoid the obstacles. If you hit an obstacle your speed will be reset"
 
 [node name="Coin" type="Sprite" parent="."]
-position = Vector2( 50, 171 )
+position = Vector2( 41, 273 )
 texture = ExtResource( 5 )
 
 [node name="coinDescription" type="RichTextLabel" parent="Coin"]
-margin_left = 23.0
-margin_top = -5.0
-margin_right = 357.0
-margin_bottom = 35.0
+margin_left = 19.0
+margin_top = -6.0
+margin_right = 353.0
+margin_bottom = 34.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
-text = "Collect coins to increase your score"
+custom_fonts/normal_font = SubResource( 3 )
+text = "Collect coins for....reasons..."
 
 [node name="Tip1" type="RichTextLabel" parent="."]
-margin_left = 31.0
-margin_top = 204.0
-margin_right = 365.0
-margin_bottom = 244.0
+margin_left = 23.0
+margin_top = 343.0
+margin_right = 357.0
+margin_bottom = 383.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
+custom_fonts/normal_font = SubResource( 4 )
 text = "Remember to protect yourself in Hell. Bring sunscreen
 "
 
 [node name="Tip2" type="RichTextLabel" parent="."]
-margin_left = 28.0
-margin_top = 259.0
-margin_right = 362.0
-margin_bottom = 299.0
+margin_left = 24.0
+margin_top = 432.0
+margin_right = 358.0
+margin_bottom = 472.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
+custom_fonts/normal_font = SubResource( 5 )
 text = "Bring some waterproof clothes..... just in case
 "
 
