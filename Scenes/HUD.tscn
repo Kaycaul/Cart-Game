@@ -1,7 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/TimerLabel.gd" type="Script" id=1]
 [ext_resource path="res://assets/coin.png" type="Texture" id=2]
+[ext_resource path="res://assets/dogicapixelbold.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
 
 [node name="HUD" type="CanvasLayer"]
 layer = 6
@@ -12,6 +18,7 @@ margin_right = 31.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 0, 10 )
 rect_scale = Vector2( 4, 4 )
+custom_fonts/font = SubResource( 1 )
 text = "slay"
 script = ExtResource( 1 )
 

@@ -41,6 +41,7 @@ func _on_Next_level_pressed():
 		changeScene = 'res://Scenes/DemoEnd.tscn'
 	else:
 		changeScene = "res://Scenes/Level"+str(global.currentLevel)+ "Intro.tscn"
+	global.levelTime = 0
 	
 	get_tree().change_scene(changeScene)
 	
