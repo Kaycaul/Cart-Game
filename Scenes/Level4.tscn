@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PathLine.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Scripts/EndOfLevel4Area2D.gd" type="Script" id=9]
 [ext_resource path="res://assets/karleton tunnel adventure3.png" type="Texture" id=10]
 [ext_resource path="res://assets/nice with jazz.mp3" type="AudioStream" id=11]
+[ext_resource path="res://Scenes/zoom_in.tres" type="Curve" id=12]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -78,6 +79,7 @@ rotation = -0.817381
 script = ExtResource( 1 )
 accel = 0.38
 zoom_curve = SubResource( 4 )
+intro_zoom_curve = ExtResource( 12 )
 MAX_SPEED = 500
 DEFAULT_SPEED = 70
 CRASH_FORCE = 210
