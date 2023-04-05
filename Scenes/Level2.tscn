@@ -138,7 +138,7 @@ spawner_seed = "emergency "
 position = Vector2( 2031, -2501 )
 rotation = 0.679498
 total_coins = 5
-spawner_seed = "meeting "
+spawner_seed = "mEeting "
 
 [node name="EndofLevel2Area2D" type="Area2D" parent="."]
 script = ExtResource( 10 )
