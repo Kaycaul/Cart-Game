@@ -151,7 +151,6 @@ shape = SubResource( 5 )
 [node name="Background Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
 volume_db = -30.0
-pitch_scale = 0.5
 autoplay = true
 
 [connection signal="area_shape_entered" from="PlayerPath/PlayerPathFollow/PlayerObject" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_PlayerObject_area_shape_entered"]

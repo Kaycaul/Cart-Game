@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://assets/Tunnels.jpg" type="Texture" id=1]
+[ext_resource path="res://assets/Cart School Logo.png" type="Texture" id=1]
 [ext_resource path="res://assets/cart.png" type="Texture" id=2]
 [ext_resource path="res://assets/cone.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/helpScreen.gd" type="Script" id=4]
 [ext_resource path="res://assets/coin.png" type="Texture" id=5]
+[ext_resource path="res://assets/piano violence.mp3" type="AudioStream" id=6]
 [ext_resource path="res://assets/dogicapixel.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://assets/tunnel pic.jpg" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 12
@@ -46,30 +48,30 @@ font_data = ExtResource( 7 )
 [node name="helpScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 2.0
-margin_top = 1.0
-margin_right = 2.0
-margin_bottom = 1.0
 script = ExtResource( 4 )
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Tunnel Background" type="TextureRect" parent="."]
+modulate = Color( 0.654902, 0.654902, 0.654902, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 1 )
+margin_left = -14.0
+margin_top = -425.0
+margin_right = 1986.0
+margin_bottom = 3007.0
+rect_scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 8 )
 stretch_mode = 1
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="Cart" type="Sprite" parent="."]
-position = Vector2( 319, 69 )
+position = Vector2( 300, 69 )
 texture = ExtResource( 2 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Cart"]
-margin_left = 24.0
-margin_top = -5.0
+margin_left = 20.0
+margin_top = -10.0
 margin_right = 362.0
 margin_bottom = 49.0
+rect_scale = Vector2( 1.2, 1.2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
 custom_fonts/normal_font = SubResource( 1 )
@@ -92,38 +94,41 @@ custom_fonts/font = SubResource( 6 )
 text = "Go back to main menu"
 
 [node name="Cone" type="Sprite" parent="."]
-position = Vector2( 319, 177 )
+position = Vector2( 300, 169 )
 texture = ExtResource( 3 )
 
 [node name="coneDescription" type="RichTextLabel" parent="Cone"]
-margin_left = 19.0
-margin_top = -11.0
-margin_right = 353.0
-margin_bottom = 29.0
+margin_left = 20.0
+margin_top = -10.0
+margin_right = 354.0
+margin_bottom = 30.0
+rect_scale = Vector2( 1.2, 1.2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
 custom_fonts/normal_font = SubResource( 2 )
 text = "Avoid the obstacles. If you hit an obstacle your speed will be lowered."
 
 [node name="Coin" type="Sprite" parent="."]
-position = Vector2( 320, 270 )
+position = Vector2( 300, 269 )
 texture = ExtResource( 5 )
 
 [node name="coinDescription" type="RichTextLabel" parent="Coin"]
-margin_left = 19.0
-margin_top = -6.0
+margin_left = 20.0
+margin_top = -10.0
 margin_right = 353.0
-margin_bottom = 34.0
+margin_bottom = 24.0
+rect_scale = Vector2( 1.2, 1.2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
 custom_fonts/normal_font = SubResource( 3 )
 text = "Collect coins for....reasons..."
 
 [node name="Tip1" type="RichTextLabel" parent="."]
-margin_left = 312.0
-margin_top = 331.0
-margin_right = 646.0
-margin_bottom = 371.0
+margin_left = 300.0
+margin_top = 369.0
+margin_right = 634.0
+margin_bottom = 409.0
+rect_scale = Vector2( 1.2, 1.2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
 custom_fonts/normal_font = SubResource( 4 )
@@ -131,14 +136,28 @@ text = "Remember to protect yourself in Hell. Bring sunscreen.
 "
 
 [node name="Tip2" type="RichTextLabel" parent="."]
-margin_left = 311.0
-margin_top = 411.0
-margin_right = 645.0
-margin_bottom = 451.0
+margin_left = 300.0
+margin_top = 469.0
+margin_right = 634.0
+margin_bottom = 509.0
+rect_scale = Vector2( 1.2, 1.2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
 custom_fonts/normal_font = SubResource( 5 )
 text = "Bring some waterproof clothes..... just in case.
 "
+
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -30.0
+autoplay = true
+
+[node name="Cart School Logo" type="TextureRect" parent="."]
+margin_left = 800.0
+margin_top = 500.0
+margin_right = 1800.0
+margin_bottom = 900.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
 
 [connection signal="pressed" from="VBoxContainer/Menu_button" to="." method="_on_Menu_button_pressed"]
