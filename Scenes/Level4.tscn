@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PathLine.gd" type="Script" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://assets/karleton tunnel adventure3.png" type="Texture" id=10]
 [ext_resource path="res://assets/nice with jazz.mp3" type="AudioStream" id=11]
 [ext_resource path="res://Scenes/zoom_in.tres" type="Curve" id=12]
+[ext_resource path="res://Scenes/Obstacles/BoatObstacle.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Obstacles/BlueObstacle.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -129,13 +131,14 @@ volume_db = -30.0
 [node name="ObstaclePlacer" parent="PlayerPath" instance=ExtResource( 4 )]
 position = Vector2( 2300.6, 2413.99 )
 rotation = -2.43509
+obstacles_to_spawn = [ ExtResource( 13 ), ExtResource( 14 ) ]
 obstacle_count = 50
 spawner_seed = "wowie"
 
 [node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]
 position = Vector2( 2141, -2133 )
 rotation = -0.817381
-total_coins = 5
+total_coins = 20
 spawner_seed = "wowzers"
 
 [node name="EndOfLevel4Area2D" type="Area2D" parent="."]
