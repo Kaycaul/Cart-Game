@@ -10,6 +10,7 @@ export var DEFAULT_SPEED = 100
 export var CRASH_FORCE = 100 # how much the player slows down on impact
 export var INTRO_WAIT_TIME = 3 # seconds until the player can move at the start of each level
 
+var global
 
 var immune = false
 var immuneTime = 0
@@ -23,6 +24,8 @@ var waiting_to_start = true
 var timer # a 2 second timer at the start of each level
 
 func _ready():
+	global = get_node("/root/Global")
+	update_coin_hud(global.totalNickels)
 	# move forward a little bit
 	path_follow.set_offset(path_follow.get_offset() + 35) 
 	# create a 2 second timer
@@ -84,8 +87,12 @@ func _physics_process(delta):
 
 func collect():
 	$pickupCoin1.play()
-	coins_collected += 1
-	$CanvasLayer/HUD/CoinLabel.text = str(coins_collected)
+	global.totalNickels += 1
+	update_coin_hud(global.totalNickels)
+
+func update_coin_hud(number_of_nickels):
+	$CanvasLayer/HUD/CoinLabel.text = "$%.2f" % (number_of_nickels * 0.05)
+
 
 func collideWithObstacle():
 	$CollisionEffect.play()

@@ -137,7 +137,7 @@ spawner_seed = "eject "
 [node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]
 position = Vector2( -2080, -2114 )
 rotation = 1.55199
-total_coins = 10
+total_coins = 45
 spawner_seed = "impostor"
 
 [node name="EndOfLevel3Area2D" type="Area2D" parent="."]

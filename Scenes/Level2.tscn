@@ -141,7 +141,7 @@ spawner_seed = "emergency "
 [node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]
 position = Vector2( 2031, -2501 )
 rotation = 0.679498
-total_coins = 14
+total_coins = 30
 spawner_seed = "mEeting "
 
 [node name="EndofLevel2Area2D" type="Area2D" parent="."]

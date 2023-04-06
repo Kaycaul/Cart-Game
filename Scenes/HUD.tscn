@@ -27,12 +27,14 @@ script = ExtResource( 1 )
 autostart = true
 
 [node name="CoinLabel" type="Label" parent="."]
-margin_left = 907.0
-margin_top = 16.0
-margin_right = 921.0
-margin_bottom = 30.0
-rect_scale = Vector2( 4, 4 )
-text = "0"
+margin_left = 709.0
+margin_top = 23.0
+margin_right = 805.0
+margin_bottom = 45.0
+rect_scale = Vector2( 2.48533, 2.48533 )
+custom_fonts/font = SubResource( 1 )
+text = "$0.00"
+align = 2
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 985, 42 )
@@ -40,29 +42,34 @@ scale = Vector2( 3.08824, 3.08824 )
 texture = ExtResource( 2 )
 
 [node name="SpeedLabel" type="Label" parent="."]
-margin_left = 91.0
-margin_top = 480.0
-margin_right = 131.0
-margin_bottom = 494.0
-rect_scale = Vector2( 3, 3 )
+margin_left = 90.0
+margin_top = 475.0
+margin_right = 170.0
+margin_bottom = 489.0
+rect_scale = Vector2( 1.75999, 1.75999 )
+size_flags_vertical = 5
+custom_fonts/font = SubResource( 1 )
 text = "Speed"
 
 [node name="SpeedLabel2" type="Label" parent="."]
 modulate = Color( 0.984375, 0.923892, 0.016649, 1 )
-margin_left = 37.0
-margin_top = 530.0
-margin_right = 91.0
-margin_bottom = 544.0
-rect_scale = Vector2( 4, 4 )
-text = "0  "
+margin_left = 12.0
+margin_top = 519.0
+margin_right = 59.0
+margin_bottom = 533.0
+rect_scale = Vector2( 3.2, 3.2 )
+custom_fonts/font = SubResource( 1 )
+text = "0"
+align = 2
 
 [node name="SpeedLabel3" type="Label" parent="."]
 modulate = Color( 0.984375, 0.923892, 0.016649, 1 )
-margin_left = 133.0
-margin_top = 530.0
-margin_right = 173.0
-margin_bottom = 544.0
-rect_scale = Vector2( 4, 4 )
+margin_left = 166.0
+margin_top = 526.0
+margin_right = 232.0
+margin_bottom = 540.0
+rect_scale = Vector2( 2.68, 2.68 )
+custom_fonts/font = SubResource( 1 )
 text = "Km/h"
 
 [node name="Cart School Logo" type="TextureRect" parent="."]
