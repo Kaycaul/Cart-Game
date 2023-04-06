@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/ObstaclePlacer.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/Obstacle.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Obstacles/Obstacle.tscn" type="PackedScene" id=2]
 
 [node name="ObstaclePlacer" type="PathFollow2D"]
 position = Vector2( -666.197, 3132.19 )
 rotation = 0.0218828
 offset = 8591.79
 script = ExtResource( 1 )
-obstacle_to_spawn = ExtResource( 2 )
+obstacles_to_spawn = [ ExtResource( 2 ) ]
 obstacle_count = 75
 spawner_seed = "111"
