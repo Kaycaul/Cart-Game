@@ -140,7 +140,7 @@ spawner_seed = "sus"
 [node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]
 position = Vector2( 2031, -2501 )
 rotation = 0.679033
-total_coins = 3
+total_coins = 6
 spawner_seed = ":0"
 
 [node name="BeginningOfLevel3Area2D" type="Area2D" parent="."]

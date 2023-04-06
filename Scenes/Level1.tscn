@@ -140,7 +140,7 @@ spawner_seed = "among us"
 [node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]
 position = Vector2( 2089, -2445 )
 rotation = 0.666838
-total_coins = 11
+total_coins = 25
 spawner_seed = "hehehe"
 
 [node name="EndOfLevel1Area2D" type="Area2D" parent="."]
