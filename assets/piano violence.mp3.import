@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/piano violence.mp3-3076da8309c84d2bef9b2e95432e2b75.mp3str"
+
+[deps]
+
+source_file="res://assets/piano violence.mp3"
+dest_files=[ "res://.import/piano violence.mp3-3076da8309c84d2bef9b2e95432e2b75.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
