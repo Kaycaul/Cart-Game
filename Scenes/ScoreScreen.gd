@@ -19,9 +19,26 @@ func _ready():
 		displayTime = (str(mins)+ ":" + str(sec))
 	
 	$Time.text = displayTime
+	var onParTime = 0
+	match global.currentLevel: 
+		1:
+			onParTime = 45 
+		2:
+			onParTime = 75
+		3:
+			onParTime = 90
+		4: 
+			onParTime = 60
+	var subTotal = 0 
+
+	var diff = onParTime - time
+
+	if (diff < -9): 
+		subTotal = -900
+	else:
+		subTotal = 100 * diff
 	
-	
-	var levelScore = time * 100
+	var levelScore = 1000 + subTotal
 	$LevelScore.text = str(levelScore)
 	
 	global.totalScore += levelScore
