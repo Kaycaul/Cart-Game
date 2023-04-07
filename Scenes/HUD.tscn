@@ -1,14 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/TimerLabel.gd" type="Script" id=1]
 [ext_resource path="res://assets/coin.png" type="Texture" id=2]
-[ext_resource path="res://assets/dogicapixelbold.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://assets/Cart School Logo.png" type="Texture" id=4]
-
-[sub_resource type="DynamicFont" id=1]
-outline_size = 1
-outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 3 )
 
 [node name="HUD" type="CanvasLayer"]
 layer = 6
@@ -19,7 +12,6 @@ margin_right = 31.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 0, 10 )
 rect_scale = Vector2( 4, 4 )
-custom_fonts/font = SubResource( 1 )
 text = "slay"
 script = ExtResource( 1 )
 
@@ -27,14 +19,12 @@ script = ExtResource( 1 )
 autostart = true
 
 [node name="CoinLabel" type="Label" parent="."]
-margin_left = 709.0
-margin_top = 23.0
-margin_right = 805.0
-margin_bottom = 45.0
-rect_scale = Vector2( 2.48533, 2.48533 )
-custom_fonts/font = SubResource( 1 )
-text = "$0.00"
-align = 2
+margin_left = 907.0
+margin_top = 16.0
+margin_right = 921.0
+margin_bottom = 30.0
+rect_scale = Vector2( 4, 4 )
+text = "0"
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 985, 42 )
@@ -42,42 +32,29 @@ scale = Vector2( 3.08824, 3.08824 )
 texture = ExtResource( 2 )
 
 [node name="SpeedLabel" type="Label" parent="."]
-margin_left = 90.0
-margin_top = 475.0
-margin_right = 170.0
-margin_bottom = 489.0
-rect_scale = Vector2( 1.75999, 1.75999 )
-size_flags_vertical = 5
-custom_fonts/font = SubResource( 1 )
+margin_left = 841.0
+margin_top = 497.0
+margin_right = 881.0
+margin_bottom = 511.0
+rect_scale = Vector2( 3, 3 )
 text = "Speed"
 
 [node name="SpeedLabel2" type="Label" parent="."]
 modulate = Color( 0.984375, 0.923892, 0.016649, 1 )
-margin_left = 12.0
-margin_top = 519.0
-margin_right = 59.0
-margin_bottom = 533.0
-rect_scale = Vector2( 3.2, 3.2 )
-custom_fonts/font = SubResource( 1 )
-text = "0"
-align = 2
+margin_left = 787.0
+margin_top = 550.0
+margin_right = 841.0
+margin_bottom = 564.0
+rect_scale = Vector2( 4, 4 )
+text = "0  "
 
 [node name="SpeedLabel3" type="Label" parent="."]
 modulate = Color( 0.984375, 0.923892, 0.016649, 1 )
-margin_left = 166.0
-margin_top = 526.0
-margin_right = 232.0
-margin_bottom = 540.0
-rect_scale = Vector2( 2.68, 2.68 )
-custom_fonts/font = SubResource( 1 )
+margin_left = 883.0
+margin_top = 550.0
+margin_right = 923.0
+margin_bottom = 564.0
+rect_scale = Vector2( 4, 4 )
 text = "Km/h"
-
-[node name="Cart School Logo" type="TextureRect" parent="."]
-margin_left = 800.0
-margin_top = 500.0
-margin_right = 1800.0
-margin_bottom = 900.0
-rect_scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 4 )
 
 [connection signal="timeout" from="Timer" to="TimerLabel" method="_on_Timer_timeout"]

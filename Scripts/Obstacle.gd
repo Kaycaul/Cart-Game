@@ -6,7 +6,6 @@ export (PackedScene) var obstacle_decoy # created when this is hit
 func on_hit():
 	# use a new rigidbody to fly off the screen
 	var new_decoy = obstacle_decoy.instance()
-	new_decoy.get_node("Icon").texture = $Icon.texture
 	new_decoy.position = position
 	new_decoy.rotation = rotation
 	new_decoy.linear_velocity = Vector2(cos(rotation), sin(rotation)) * 400 # get a vector pointing in the same direction

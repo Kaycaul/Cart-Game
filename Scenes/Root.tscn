@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/cart.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/PathLine.gd" type="Script" id=3]
-[ext_resource path="res://Scenes/Obstacles/Obstacle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Obstacle.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/karleton tunnel adventure2.png" type="Texture" id=5]
 [ext_resource path="res://assets/explosion.wav" type="AudioStream" id=6]
 [ext_resource path="res://Scripts/ObstaclePlacer.gd" type="Script" id=7]

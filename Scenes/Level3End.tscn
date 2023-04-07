@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/PathLine.gd" type="Script" id=2]
@@ -11,8 +11,7 @@
 [ext_resource path="res://assets/karleton tunnel adventure3.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/EndOfLevel3Area2D.gd" type="Script" id=10]
 [ext_resource path="res://assets/awful with trumpet.mp3" type="AudioStream" id=11]
-[ext_resource path="res://Scenes/zoom_in.tres" type="Curve" id=12]
-[ext_resource path="res://Scenes/Obstacles/FireObstacle.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/Particle.png" type="Texture" id=12]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -22,7 +21,7 @@ _data = {
 [sub_resource type="Curve" id=4]
 min_value = 0.25
 max_value = 0.55
-_data = [ Vector2( 0, 0.25 ), 0.0, 0.0, 0, 0, Vector2( 0.233333, 0.271818 ), 0.279379, 0.279379, 0, 0, Vector2( 0.728571, 0.55 ), 0.0636364, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0.25 ), 0.0, 0.0, 0, 0, Vector2( 0.333333, 0.281818 ), 0.279379, 0.279379, 0, 0, Vector2( 1, 0.506364 ), 0.0636364, 0.0, 0, 0 ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 12.1401, 17.8391 )
@@ -46,7 +45,7 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 33.5, 22.25 )
 
-[node name="Root2" type="Node"]
+[node name="Root" type="Node"]
 
 [node name="Scenery" type="Node2D" parent="."]
 position = Vector2( 77, 207 )
@@ -80,7 +79,6 @@ rotation = 1.55199
 script = ExtResource( 1 )
 accel = 0.45
 zoom_curve = SubResource( 4 )
-intro_zoom_curve = ExtResource( 12 )
 MAX_SPEED = 700
 DEFAULT_SPEED = 70
 CRASH_FORCE = 145
@@ -90,6 +88,23 @@ position = Vector2( 1.8924, -0.647064 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 8 )
+
+[node name="Trail" type="CPUParticles2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
+position = Vector2( 2.16406, 0.124023 )
+rotation = 3.14116
+scale = Vector2( 0.02, 0.02 )
+amount = 10
+lifetime = 2.0
+texture = ExtResource( 12 )
+direction = Vector2( 0, 0 )
+spread = 0.0
+gravity = Vector2( -15, 98 )
+angular_velocity = 90.0
+orbit_velocity = 0.1
+orbit_velocity_random = 1.0
+linear_accel = 1.0
+angle = 180.0
+angle_random = 0.9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 position = Vector2( 1.98328, -0.752075 )
@@ -130,14 +145,13 @@ volume_db = -30.0
 [node name="ObstaclePlacer" parent="PlayerPath" instance=ExtResource( 4 )]
 position = Vector2( -1797.36, -245.927 )
 rotation = -1.24904
-obstacles_to_spawn = [ ExtResource( 13 ) ]
 obstacle_count = 150
 spawner_seed = "eject "
 
 [node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]
 position = Vector2( -2080, -2114 )
 rotation = 1.55199
-total_coins = 45
+total_coins = 4
 spawner_seed = "impostor"
 
 [node name="EndOfLevel3Area2D" type="Area2D" parent="."]
