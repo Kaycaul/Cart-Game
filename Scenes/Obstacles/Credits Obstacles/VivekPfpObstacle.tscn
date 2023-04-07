@@ -9,7 +9,7 @@ radius = 36.6667
 
 [node name="Obstacle" type="Area2D"]
 rotation = -1.5708
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 0.2, 0.2 )
 z_index = 5
 script = ExtResource( 2 )
 obstacle_decoy = ExtResource( 1 )

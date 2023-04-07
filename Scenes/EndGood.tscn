@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Obstacles/Obstacle.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Scenes/Obstacles/Credits Obstacles/CreditsObstacle.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Obstacles/Credits Obstacles/VivekPfpObstacle.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Obstacles/Credits Obstacles/VivekNameObstacle.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Obstacles/Credits Obstacles/VivekRoleObstacle.tscn" type="PackedScene" id=17]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -163,21 +164,58 @@ position = Vector2( 600, -196 )
 position = Vector2( 589, -226 )
 
 [node name="CREDITS3" parent="." instance=ExtResource( 14 )]
-position = Vector2( 563, -324 )
+position = Vector2( 560, -325 )
 rotation = 0.0
 
 [node name="CREDITS4" parent="." instance=ExtResource( 14 )]
-position = Vector2( 630, -313 )
+position = Vector2( 619, -300 )
 rotation = 3.56047
 
 [node name="Vivek Pfp" parent="." instance=ExtResource( 15 )]
-position = Vector2( 563, -451 )
+position = Vector2( 617, -443 )
+scale = Vector2( 0.6, 0.6 )
 
 [node name="Vivek Pfp2" parent="." instance=ExtResource( 15 )]
-position = Vector2( 617, -428 )
+position = Vector2( 556, -441 )
+
+[node name="Vivek Pfp3" parent="." instance=ExtResource( 15 )]
+position = Vector2( 573, -509 )
+
+[node name="Vivek Pfp4" parent="." instance=ExtResource( 15 )]
+position = Vector2( 614, -509 )
+
+[node name="Vivek Pfp5" parent="." instance=ExtResource( 15 )]
+position = Vector2( 552, -509 )
+
+[node name="Vivek Pfp6" parent="." instance=ExtResource( 15 )]
+position = Vector2( 564, -681 )
+scale = Vector2( 0.8, 0.8 )
 
 [node name="Vivek Name" parent="." instance=ExtResource( 16 )]
-position = Vector2( 593, -500 )
+position = Vector2( 564, -634 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Vivek Name2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 603, -833 )
+rotation = -0.698132
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Vivek Role" parent="." instance=ExtResource( 17 )]
+position = Vector2( 549, -994 )
+rotation = 3.14159
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Vivek Role2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 580, -994 )
+rotation = 0.0
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Vivek Role3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 558, -1151 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Vivek Role4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 565, -1195 )
 scale = Vector2( 0.6, 0.6 )
 
 [connection signal="area_shape_entered" from="PlayerPath/PlayerPathFollow/PlayerObject" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_PlayerObject_area_shape_entered"]
