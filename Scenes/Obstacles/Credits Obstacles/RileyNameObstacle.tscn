@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/HitObstacle.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/Obstacle.gd" type="Script" id=2]
-[ext_resource path="res://assets/Credits Assets/VivekRoleObstacle.png" type="Texture" id=3]
+[ext_resource path="res://assets/Credits Assets/RileyNameObstacle.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Obstacle.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 60, 10 )
@@ -11,13 +11,13 @@ extents = Vector2( 60, 10 )
 rotation = -1.5708
 scale = Vector2( 0.3, 0.3 )
 z_index = 5
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 obstacle_decoy = ExtResource( 1 )
 
 [node name="Icon" type="Sprite" parent="."]
 rotation = 1.5708
 scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1.38955e-13, -3.17891e-06 )

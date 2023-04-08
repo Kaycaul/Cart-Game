@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Obstacles/Obstacle.tscn" type="PackedScene" id=2]
@@ -17,16 +17,25 @@
 [ext_resource path="res://Scenes/Obstacles/Credits Obstacles/VivekPfpObstacle.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Obstacles/Credits Obstacles/VivekNameObstacle.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Obstacles/Credits Obstacles/VivekRoleObstacle.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Obstacles/Credits Obstacles/RileyPfpObstacle.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Obstacles/Credits Obstacles/RileyNameObstacle.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Obstacles/Credits Obstacles/RileyRoleObstacle.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Obstacles/Credits Obstacles/DuncanNameObstacle.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Obstacles/Credits Obstacles/DuncanPfpObstacle.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Obstacles/Credits Obstacles/DuncanRoleObstacle.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Obstacles/Credits Obstacles/IsabellePfpObstacle.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Obstacles/Credits Obstacles/IsabelleNameObstacle.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Obstacles/Credits Obstacles/IsabelleRoleObstacle.tscn" type="PackedScene" id=26]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 585, -3, 0, 0, 0, 0, 570, -2746 )
+"points": PoolVector2Array( 0, 0, 0, 0, 585, -3, 0, 0, 0, 0, 559, -4191 )
 }
 
-[sub_resource type="Curve" id=4]
+[sub_resource type="Curve" id=6]
 min_value = 0.25
 max_value = 0.55
-_data = [ Vector2( 0, 0.25 ), 0.0, 0.0, 0, 0, Vector2( 0.333333, 0.281818 ), 0.279379, 0.279379, 0, 0, Vector2( 1, 0.506364 ), 0.0636364, 0.0, 0, 0 ]
+_data = [ Vector2( 0, 0.25 ), 0.0, 0.0532771, 0, 0, Vector2( 1, 0.299091 ), 0.0613636, 0.0, 0, 0 ]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 12.1401, 17.8391 )
@@ -70,17 +79,18 @@ script = ExtResource( 8 )
 
 [node name="PlayerPathFollow" type="PathFollow2D" parent="PlayerPath"]
 position = Vector2( 585, -3 )
-rotation = -1.57627
+rotation = -1.577
 
 [node name="PlayerObject" type="Area2D" parent="PlayerPath/PlayerPathFollow"]
+unique_name_in_owner = true
 script = ExtResource( 7 )
 __meta__ = {
 "_edit_group_": true
 }
 accel = 0.26
-zoom_curve = SubResource( 4 )
+zoom_curve = SubResource( 6 )
 intro_zoom_curve = ExtResource( 9 )
-MAX_SPEED = 500
+MAX_SPEED = 150
 DEFAULT_SPEED = 70
 CRASH_FORCE = 165
 
@@ -106,7 +116,7 @@ remote_path = NodePath("../CartCamera")
 anims/skid = SubResource( 3 )
 
 [node name="CartCamera" type="Camera2D" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
-position = Vector2( 66.623, -2.26459 )
+position = Vector2( 66.623, -2.26453 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 rotating = true
@@ -128,7 +138,7 @@ volume_db = -30.0
 
 [node name="ObstaclePlacer" parent="PlayerPath" groups=["obstacles"] instance=ExtResource( 4 )]
 visible = false
-position = Vector2( 570, -2746 )
+position = Vector2( 559, -4191 )
 rotation = 0.0
 obstacles_to_spawn = [ ExtResource( 5 ), ExtResource( 2 ) ]
 obstacle_count = 0
@@ -137,7 +147,7 @@ spawner_seed = "among us"
 [node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 3 )]
 visible = false
 position = Vector2( 585, -3 )
-rotation = -1.57627
+rotation = -1.577
 total_coins = 0
 spawner_seed = "hehehe"
 
@@ -157,65 +167,215 @@ stream = ExtResource( 12 )
 volume_db = -30.0
 autoplay = true
 
-[node name="CREDITS" parent="." instance=ExtResource( 14 )]
+[node name="Other Obstacles" type="Node" parent="."]
+
+[node name="CREDITS" parent="Other Obstacles" instance=ExtResource( 14 )]
 position = Vector2( 600, -196 )
 
-[node name="CREDITS2" parent="." instance=ExtResource( 14 )]
+[node name="CREDITS2" parent="Other Obstacles" instance=ExtResource( 14 )]
 position = Vector2( 589, -226 )
 
-[node name="CREDITS3" parent="." instance=ExtResource( 14 )]
+[node name="CREDITS3" parent="Other Obstacles" instance=ExtResource( 14 )]
 position = Vector2( 560, -325 )
 rotation = 0.0
 
-[node name="CREDITS4" parent="." instance=ExtResource( 14 )]
+[node name="CREDITS4" parent="Other Obstacles" instance=ExtResource( 14 )]
 position = Vector2( 619, -300 )
-rotation = 3.56047
+rotation = -2.72272
 
-[node name="Vivek Pfp" parent="." instance=ExtResource( 15 )]
+[node name="Vivek Obstacles" type="Node" parent="."]
+
+[node name="Vivek Pfp" parent="Vivek Obstacles" instance=ExtResource( 15 )]
 position = Vector2( 617, -443 )
 scale = Vector2( 0.6, 0.6 )
 
-[node name="Vivek Pfp2" parent="." instance=ExtResource( 15 )]
+[node name="Vivek Pfp2" parent="Vivek Obstacles" instance=ExtResource( 15 )]
 position = Vector2( 556, -441 )
 
-[node name="Vivek Pfp3" parent="." instance=ExtResource( 15 )]
+[node name="Vivek Pfp3" parent="Vivek Obstacles" instance=ExtResource( 15 )]
 position = Vector2( 573, -509 )
 
-[node name="Vivek Pfp4" parent="." instance=ExtResource( 15 )]
+[node name="Vivek Pfp4" parent="Vivek Obstacles" instance=ExtResource( 15 )]
 position = Vector2( 614, -509 )
 
-[node name="Vivek Pfp5" parent="." instance=ExtResource( 15 )]
+[node name="Vivek Pfp5" parent="Vivek Obstacles" instance=ExtResource( 15 )]
 position = Vector2( 552, -509 )
 
-[node name="Vivek Pfp6" parent="." instance=ExtResource( 15 )]
+[node name="Vivek Pfp6" parent="Vivek Obstacles" instance=ExtResource( 15 )]
 position = Vector2( 564, -681 )
 scale = Vector2( 0.8, 0.8 )
 
-[node name="Vivek Name" parent="." instance=ExtResource( 16 )]
+[node name="Vivek Name" parent="Vivek Obstacles" instance=ExtResource( 16 )]
 position = Vector2( 564, -634 )
 scale = Vector2( 0.6, 0.6 )
 
-[node name="Vivek Name2" parent="." instance=ExtResource( 16 )]
+[node name="Vivek Name2" parent="Vivek Obstacles" instance=ExtResource( 16 )]
 position = Vector2( 603, -833 )
 rotation = -0.698132
 scale = Vector2( 0.6, 0.6 )
 
-[node name="Vivek Role" parent="." instance=ExtResource( 17 )]
+[node name="Vivek Role" parent="Vivek Obstacles" instance=ExtResource( 17 )]
 position = Vector2( 549, -994 )
-rotation = 3.14159
+rotation = -3.14159
 scale = Vector2( 0.6, 0.6 )
 
-[node name="Vivek Role2" parent="." instance=ExtResource( 17 )]
+[node name="Vivek Role2" parent="Vivek Obstacles" instance=ExtResource( 17 )]
 position = Vector2( 580, -994 )
 rotation = 0.0
 scale = Vector2( 0.6, 0.6 )
 
-[node name="Vivek Role3" parent="." instance=ExtResource( 17 )]
+[node name="Vivek Role3" parent="Vivek Obstacles" instance=ExtResource( 17 )]
 position = Vector2( 558, -1151 )
 scale = Vector2( 0.6, 0.6 )
 
-[node name="Vivek Role4" parent="." instance=ExtResource( 17 )]
+[node name="Vivek Role4" parent="Vivek Obstacles" instance=ExtResource( 17 )]
 position = Vector2( 565, -1195 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Riley Obstacles" type="Node" parent="."]
+
+[node name="Riley Pfp" parent="Riley Obstacles" instance=ExtResource( 18 )]
+position = Vector2( 572, -1336 )
+
+[node name="Riley Pfp2" parent="Riley Obstacles" instance=ExtResource( 18 )]
+position = Vector2( 552, -1421 )
+
+[node name="Riley Pfp3" parent="Riley Obstacles" instance=ExtResource( 18 )]
+position = Vector2( 562, -1379 )
+
+[node name="Riley Pfp4" parent="Riley Obstacles" instance=ExtResource( 18 )]
+position = Vector2( 597, -1531 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Riley Pfp5" parent="Riley Obstacles" instance=ExtResource( 18 )]
+position = Vector2( 602, -1422 )
+
+[node name="Riley Pfp6" parent="Riley Obstacles" instance=ExtResource( 18 )]
+position = Vector2( 611, -1379 )
+
+[node name="Riley Pfp7" parent="Riley Obstacles" instance=ExtResource( 18 )]
+position = Vector2( 619, -1338 )
+
+[node name="Riley Name" parent="Riley Obstacles" instance=ExtResource( 19 )]
+position = Vector2( 600, -1489 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Riley Role" parent="Riley Obstacles" instance=ExtResource( 20 )]
+position = Vector2( 556, -1672 )
+rotation = -2.55342
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Riley Role2" parent="Riley Obstacles" instance=ExtResource( 20 )]
+position = Vector2( 551, -1719 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Riley Role3" parent="Riley Obstacles" instance=ExtResource( 20 )]
+position = Vector2( 599, -1838 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Duncan Obstacles" type="Node" parent="."]
+
+[node name="Duncan Pfp" parent="Duncan Obstacles" instance=ExtResource( 22 )]
+position = Vector2( 599, -1992 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Duncan Pfp2" parent="Duncan Obstacles" instance=ExtResource( 22 )]
+position = Vector2( 557, -1940 )
+
+[node name="Duncan Pfp3" parent="Duncan Obstacles" instance=ExtResource( 22 )]
+position = Vector2( 613, -1947 )
+
+[node name="Duncan Pfp4" parent="Duncan Obstacles" instance=ExtResource( 22 )]
+position = Vector2( 606, -2034 )
+
+[node name="Duncan Pfp5" parent="Duncan Obstacles" instance=ExtResource( 22 )]
+position = Vector2( 544, -2008 )
+
+[node name="Duncan Pfp6" parent="Duncan Obstacles" instance=ExtResource( 22 )]
+position = Vector2( 556, -2055 )
+
+[node name="Duncan Pfp7" parent="Duncan Obstacles" instance=ExtResource( 22 )]
+position = Vector2( 598, -2221 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Duncan Name" parent="Duncan Obstacles" instance=ExtResource( 21 )]
+position = Vector2( 600, -2175 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Duncan Name2" parent="Duncan Obstacles" instance=ExtResource( 21 )]
+position = Vector2( 585, -2272 )
+rotation = -1.28456
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Duncan Role" parent="Duncan Obstacles" instance=ExtResource( 23 )]
+position = Vector2( 552, -2363 )
+rotation = -2.33525
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Duncan Role2" parent="Duncan Obstacles" instance=ExtResource( 23 )]
+position = Vector2( 602, -2464 )
+rotation = -0.53058
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Duncan Role3" parent="Duncan Obstacles" instance=ExtResource( 23 )]
+position = Vector2( 602, -2511 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Isabelle Obstacles" type="Node" parent="."]
+
+[node name="Isabelle Pfp" parent="Isabelle Obstacles" instance=ExtResource( 24 )]
+position = Vector2( 576, -2673 )
+
+[node name="Isabelle Pfp2" parent="Isabelle Obstacles" instance=ExtResource( 24 )]
+position = Vector2( 600, -2673 )
+
+[node name="Isabelle Pfp3" parent="Isabelle Obstacles" instance=ExtResource( 24 )]
+position = Vector2( 541, -2610 )
+
+[node name="Isabelle Pfp4" parent="Isabelle Obstacles" instance=ExtResource( 24 )]
+position = Vector2( 539, -2673 )
+
+[node name="Isabelle Pfp5" parent="Isabelle Obstacles" instance=ExtResource( 24 )]
+position = Vector2( 565, -2610 )
+
+[node name="Isabelle Pfp6" parent="Isabelle Obstacles" instance=ExtResource( 24 )]
+position = Vector2( 596, -2610 )
+
+[node name="Isabelle Pfp7" parent="Isabelle Obstacles" instance=ExtResource( 24 )]
+position = Vector2( 548, -2813 )
+scale = Vector2( 0.8, 0.8 )
+
+[node name="Isabelle Name" parent="Isabelle Obstacles" instance=ExtResource( 25 )]
+position = Vector2( 547, -2770 )
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Isabelle Name2" parent="Isabelle Obstacles" instance=ExtResource( 25 )]
+position = Vector2( 582, -2948 )
+rotation = 0.0
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Isabelle Name3" parent="Isabelle Obstacles" instance=ExtResource( 25 )]
+position = Vector2( 600, -2923 )
+rotation = 0.0
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Isabelle Name4" parent="Isabelle Obstacles" instance=ExtResource( 25 )]
+position = Vector2( 562, -2970 )
+rotation = 0.0
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Isabelle Role" parent="Isabelle Obstacles" instance=ExtResource( 26 )]
+position = Vector2( 538, -3079 )
+rotation = -3.14159
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Isabelle Role2" parent="Isabelle Obstacles" instance=ExtResource( 26 )]
+position = Vector2( 552, -3149 )
+rotation = -2.32478
+scale = Vector2( 0.6, 0.6 )
+
+[node name="Isabelle Role3" parent="Isabelle Obstacles" instance=ExtResource( 26 )]
+position = Vector2( 546, -3190 )
 scale = Vector2( 0.6, 0.6 )
 
 [connection signal="area_shape_entered" from="PlayerPath/PlayerPathFollow/PlayerObject" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_PlayerObject_area_shape_entered"]
