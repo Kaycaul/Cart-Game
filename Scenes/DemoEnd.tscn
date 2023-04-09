@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scripts/DemoEndButton.gd" type="Script" id=1]
 [ext_resource path="res://assets/IMG_2177.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/Cart School Logo.png" type="Texture" id=3]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -44,7 +45,7 @@ text = "That's all we made
 
 the demo is over
 
-Thanks for playing Underground Cart Adventures: Cart School Ultimate Tunnels Edition Simulator: The Final Game Part One: The Super Speed 2D game!!! Speedrunners dream (not minecraft) Non-Voxel Game Go fast!! Deception game(there is no deception hahaha deceived you )にほん 2023 Demo Difficulty: Easy (99% will FAIL!!! (can you beat it?? (you cant lol))) +日本 ベストゲーム have you ever wanted to ride a golf cart in the Karleton tunnels????? Well you can't, it's not a golf cart, it's a maintenance cart. Now you can ride it omg"
+Thanks for playing Underground Cart Adventures: Cart School Ultimate Tunnels Edition Simulator: The Final Game Part One: The Super Speed 2D game!!! Speedrunners dream (not minecraft) Non-Voxel Game Go fast!! Deception game(there is no deception hahaha deceived you )にほん 2023 Demo Difficulty: Easy (99% will FAIL!!! (can you beat it?? (you cant lol))) +日本 ベストゲーム have you ever wanted to ride a golf cart in the Cart School tunnels????? Well you can't, it's not a golf cart, it's a maintenance cart. Now you can ride it omg"
 
 [node name="DemoEndButton" type="Button" parent="."]
 margin_left = 385.0
@@ -54,5 +55,13 @@ margin_bottom = 491.0
 rect_scale = Vector2( 2, 2 )
 text = "Back to start screen"
 script = ExtResource( 1 )
+
+[node name="Cart School Logo" type="TextureRect" parent="."]
+margin_left = 800.0
+margin_top = 500.0
+margin_right = 1800.0
+margin_bottom = 900.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
 
 [connection signal="pressed" from="DemoEndButton" to="DemoEndButton" method="_on_DemoEndButton_pressed"]

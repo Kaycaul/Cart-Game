@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/DemoEndButton.gd" type="Script" id=1]
+[ext_resource path="res://assets/IMG_2177.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/Cart School Logo.png" type="Texture" id=3]
+[ext_resource path="res://assets/pink star.png" type="Texture" id=4]
+[ext_resource path="res://assets/cart driver meme.png" type="Texture" id=5]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.545098, 0.545098, 0.545098, 1 )
+margin_left = -27.0
+margin_top = -17.0
+margin_right = 14383.0
+margin_bottom = 6253.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Title" type="Label" parent="."]
+anchor_right = 1.0
+margin_left = 40.0
+margin_top = 50.0
+margin_right = -750.0
+margin_bottom = 64.0
+rect_scale = Vector2( 4, 4 )
+text = "Oops! You don't have enough money"
+
+[node name="Body Text" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -447.0
+margin_top = -163.0
+margin_right = 6.0
+margin_bottom = -35.0
+rect_scale = Vector2( 2, 2 )
+text = "You can't proceed until you collect $4.
+
+Try again from the start to unlock the
+TRUE ENDING!!!!!!
+
+(Negotiations won't get you anywhere, just
+try again please)"
+
+[node name="DemoEndButton" type="Button" parent="."]
+margin_left = 385.0
+margin_top = 461.0
+margin_right = 524.0
+margin_bottom = 491.0
+rect_scale = Vector2( 2, 2 )
+text = "Back to start screen"
+script = ExtResource( 1 )
+
+[node name="Cart School Logo" type="TextureRect" parent="."]
+margin_left = 800.0
+margin_top = 500.0
+margin_right = 1800.0
+margin_bottom = 900.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="Pink Star" type="TextureRect" parent="."]
+margin_left = 894.0
+margin_top = 495.0
+margin_right = 1294.0
+margin_bottom = 895.0
+rect_scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+
+[node name="Meme" type="TextureRect" parent="."]
+margin_left = 638.0
+margin_top = 123.0
+margin_right = 1136.0
+margin_bottom = 555.0
+rect_scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 5 )
+
+[connection signal="pressed" from="DemoEndButton" to="DemoEndButton" method="_on_DemoEndButton_pressed"]

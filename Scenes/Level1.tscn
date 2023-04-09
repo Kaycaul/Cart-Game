@@ -70,7 +70,7 @@ func _ready():
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 54.7087, 48.5215 )
 
-[node name="Root3" type="Node"]
+[node name="Root" type="Node"]
 
 [node name="Scenery" type="Node2D" parent="."]
 position = Vector2( 77, 207 )
@@ -147,7 +147,7 @@ volume_db = -30.0
 
 [node name="HUD" parent="PlayerPath/PlayerPathFollow/PlayerObject/CanvasLayer" instance=ExtResource( 4 )]
 
-[node name="ObstaclePlacer" parent="PlayerPath" instance=ExtResource( 1 )]
+[node name="ObstaclePlacer" parent="PlayerPath" groups=["obstacles"] instance=ExtResource( 1 )]
 position = Vector2( 936.613, 2267.58 )
 rotation = -3.13937
 obstacles_to_spawn = [ ExtResource( 14 ), ExtResource( 13 ) ]
