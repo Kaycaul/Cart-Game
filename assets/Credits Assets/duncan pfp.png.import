@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/vivek pfp.png-b497012d6841149fffd719d20488aeba.stex"
+path="res://.import/duncan pfp.png-6611476f233d783e57c3808d95cf9bf0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/vivek pfp.png"
-dest_files=[ "res://.import/vivek pfp.png-b497012d6841149fffd719d20488aeba.stex" ]
+source_file="res://assets/Credits Assets/duncan pfp.png"
+dest_files=[ "res://.import/duncan pfp.png-6611476f233d783e57c3808d95cf9bf0.stex" ]
 
 [params]
 

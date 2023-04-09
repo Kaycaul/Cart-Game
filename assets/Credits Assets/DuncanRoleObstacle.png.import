@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/riley pfp.png-2bc6decd26a7d6f3666d9f6c494376e4.stex"
+path="res://.import/DuncanRoleObstacle.png-9319c72cfcdcd24a75e0daf77b572a70.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/riley pfp.png"
-dest_files=[ "res://.import/riley pfp.png-2bc6decd26a7d6f3666d9f6c494376e4.stex" ]
+source_file="res://assets/Credits Assets/DuncanRoleObstacle.png"
+dest_files=[ "res://.import/DuncanRoleObstacle.png-9319c72cfcdcd24a75e0daf77b572a70.stex" ]
 
 [params]
 

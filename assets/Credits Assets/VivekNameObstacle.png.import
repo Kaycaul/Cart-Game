@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/isabelle pfp.png-23eaef401b07ef5d4d2a1ae719e3887c.stex"
+path="res://.import/VivekNameObstacle.png-1ae7feab81d392e91b6d0cad3b7090d1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/isabelle pfp.png"
-dest_files=[ "res://.import/isabelle pfp.png-23eaef401b07ef5d4d2a1ae719e3887c.stex" ]
+source_file="res://assets/Credits Assets/VivekNameObstacle.png"
+dest_files=[ "res://.import/VivekNameObstacle.png-1ae7feab81d392e91b6d0cad3b7090d1.stex" ]
 
 [params]
 

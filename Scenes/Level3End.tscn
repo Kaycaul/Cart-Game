@@ -1,7 +1,7 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/PathLine.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/PathDrawer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/CoinPlacer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/ObstaclePlacer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=5]
@@ -13,6 +13,7 @@
 [ext_resource path="res://assets/awful with trumpet.mp3" type="AudioStream" id=11]
 [ext_resource path="res://Scenes/zoom_in.tres" type="Curve" id=12]
 [ext_resource path="res://Scenes/Obstacles/FireObstacle.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/HellFloor.tscn" type="PackedScene" id=14]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -53,6 +54,7 @@ position = Vector2( 77, 207 )
 
 [node name="Background" type="Sprite" parent="Scenery"]
 scale = Vector2( 1.5, 1.5 )
+z_index = -2
 texture = ExtResource( 9 )
 __meta__ = {
 "_edit_lock_": true
@@ -63,14 +65,6 @@ curve = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="PathLine" type="Line2D" parent="PlayerPath"]
-position = Vector2( 1, 0 )
-points = PoolVector2Array( -2081, -2098 )
-width = 80.0
-default_color = Color( 0.905882, 0.462745, 0.247059, 1 )
-antialiased = true
-script = ExtResource( 2 )
 
 [node name="PlayerPathFollow" type="PathFollow2D" parent="PlayerPath"]
 position = Vector2( -2080, -2114 )
@@ -139,6 +133,11 @@ position = Vector2( -2080, -2114 )
 rotation = 1.55199
 total_coins = 45
 spawner_seed = "impostor"
+
+[node name="PathDrawer" parent="PlayerPath" instance=ExtResource( 2 )]
+position = Vector2( -2080, -2114 )
+rotation = 1.55199
+path_part = ExtResource( 14 )
 
 [node name="EndOfLevel3Area2D" type="Area2D" parent="."]
 script = ExtResource( 10 )

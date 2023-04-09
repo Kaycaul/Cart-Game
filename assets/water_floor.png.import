@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/duncan pfp.png-53fdfa9bd8135e92f3dafcfa82ad5eba.stex"
+path="res://.import/water_floor.png-315f7468e1291d9bb1d762cad2e65a9d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/duncan pfp.png"
-dest_files=[ "res://.import/duncan pfp.png-53fdfa9bd8135e92f3dafcfa82ad5eba.stex" ]
+source_file="res://assets/water_floor.png"
+dest_files=[ "res://.import/water_floor.png-315f7468e1291d9bb1d762cad2e65a9d.stex" ]
 
 [params]
 
