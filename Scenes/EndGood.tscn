@@ -1,11 +1,11 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Obstacles/Obstacle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/CoinPlacer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/ObstaclePlacer.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Obstacles/CartObstacle.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scripts/EndOfLevelArea2D.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/EndOfLevel5Area2D.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=7]
 [ext_resource path="res://Scripts/PathLine.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/zoom_in.tres" type="Curve" id=9]
@@ -26,10 +26,13 @@
 [ext_resource path="res://Scenes/Obstacles/Credits Obstacles/IsabellePfpObstacle.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Scenes/Obstacles/Credits Obstacles/IsabelleNameObstacle.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Scenes/Obstacles/Credits Obstacles/IsabelleRoleObstacle.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Obstacles/Credits Obstacles/ForPlayingObstacle.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/Obstacles/Credits Obstacles/GameTitleObstacle.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Obstacles/Credits Obstacles/ThankYouObstacle.tscn" type="PackedScene" id=29]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 585, -3, 0, 0, 0, 0, 559, -4191 )
+"points": PoolVector2Array( 0, 0, 0, 0, 585, -3, 0, 0, 0, 0, 560, -4070 )
 }
 
 [sub_resource type="Curve" id=6]
@@ -57,7 +60,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 613.668, 533.221 )
+extents = Vector2( 91, 42.3052 )
 
 [node name="Root" type="Node"]
 
@@ -151,15 +154,14 @@ rotation = -1.577
 total_coins = 0
 spawner_seed = "hehehe"
 
-[node name="EndOfLevel1Area2D" type="Area2D" parent="."]
-position = Vector2( -855, -3637 )
+[node name="EndOfLevel5Area2D" type="Area2D" parent="."]
+position = Vector2( 560, -4096 )
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="EndOfLevel1Area2D"]
-position = Vector2( -2, -5 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EndOfLevel5Area2D"]
 shape = SubResource( 5 )
 
 [node name="Background Music" type="AudioStreamPlayer" parent="."]
@@ -182,6 +184,16 @@ rotation = 0.0
 [node name="CREDITS4" parent="Other Obstacles" instance=ExtResource( 14 )]
 position = Vector2( 619, -300 )
 rotation = -2.72272
+
+[node name="THANK YOU" parent="Other Obstacles" instance=ExtResource( 29 )]
+position = Vector2( 544, -3615 )
+
+[node name="FOR PLAYING" parent="Other Obstacles" instance=ExtResource( 27 )]
+position = Vector2( 578, -3725 )
+
+[node name="GAME TITLE" parent="Other Obstacles" instance=ExtResource( 28 )]
+position = Vector2( 561, -3874 )
+scale = Vector2( 1, 1 )
 
 [node name="Vivek Obstacles" type="Node" parent="."]
 
@@ -232,6 +244,22 @@ scale = Vector2( 0.6, 0.6 )
 position = Vector2( 565, -1195 )
 scale = Vector2( 0.6, 0.6 )
 
+[node name="Vivek Pfp7" parent="Vivek Obstacles" instance=ExtResource( 15 )]
+position = Vector2( 517, -3402 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Vivek Pfp8" parent="Vivek Obstacles" instance=ExtResource( 15 )]
+position = Vector2( 548, -3433 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Vivek Pfp9" parent="Vivek Obstacles" instance=ExtResource( 15 )]
+position = Vector2( 580, -3465 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Vivek Pfp10" parent="Vivek Obstacles" instance=ExtResource( 15 )]
+position = Vector2( 611, -3497 )
+scale = Vector2( 0.4, 0.4 )
+
 [node name="Riley Obstacles" type="Node" parent="."]
 
 [node name="Riley Pfp" parent="Riley Obstacles" instance=ExtResource( 18 )]
@@ -272,6 +300,22 @@ scale = Vector2( 0.6, 0.6 )
 [node name="Riley Role3" parent="Riley Obstacles" instance=ExtResource( 20 )]
 position = Vector2( 599, -1838 )
 scale = Vector2( 0.6, 0.6 )
+
+[node name="Riley Pfp8" parent="Riley Obstacles" instance=ExtResource( 18 )]
+position = Vector2( 548, -3401 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Riley Pfp9" parent="Riley Obstacles" instance=ExtResource( 18 )]
+position = Vector2( 579, -3433 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Riley Pfp10" parent="Riley Obstacles" instance=ExtResource( 18 )]
+position = Vector2( 612, -3465 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Riley Pfp11" parent="Riley Obstacles" instance=ExtResource( 18 )]
+position = Vector2( 516, -3497 )
+scale = Vector2( 0.4, 0.4 )
 
 [node name="Duncan Obstacles" type="Node" parent="."]
 
@@ -320,6 +364,22 @@ scale = Vector2( 0.6, 0.6 )
 [node name="Duncan Role3" parent="Duncan Obstacles" instance=ExtResource( 23 )]
 position = Vector2( 602, -2511 )
 scale = Vector2( 0.6, 0.6 )
+
+[node name="Duncan Pfp8" parent="Duncan Obstacles" instance=ExtResource( 22 )]
+position = Vector2( 580, -3401 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Duncan Pfp9" parent="Duncan Obstacles" instance=ExtResource( 22 )]
+position = Vector2( 611, -3434 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Duncan Pfp10" parent="Duncan Obstacles" instance=ExtResource( 22 )]
+position = Vector2( 517, -3465 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Duncan Pfp11" parent="Duncan Obstacles" instance=ExtResource( 22 )]
+position = Vector2( 547, -3497 )
+scale = Vector2( 0.4, 0.4 )
 
 [node name="Isabelle Obstacles" type="Node" parent="."]
 
@@ -378,5 +438,21 @@ scale = Vector2( 0.6, 0.6 )
 position = Vector2( 546, -3190 )
 scale = Vector2( 0.6, 0.6 )
 
+[node name="Isabelle Pfp8" parent="Isabelle Obstacles" instance=ExtResource( 24 )]
+position = Vector2( 612, -3402 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Isabelle Pfp9" parent="Isabelle Obstacles" instance=ExtResource( 24 )]
+position = Vector2( 517, -3434 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Isabelle Pfp10" parent="Isabelle Obstacles" instance=ExtResource( 24 )]
+position = Vector2( 548, -3465 )
+scale = Vector2( 0.4, 0.4 )
+
+[node name="Isabelle Pfp11" parent="Isabelle Obstacles" instance=ExtResource( 24 )]
+position = Vector2( 580, -3497 )
+scale = Vector2( 0.4, 0.4 )
+
 [connection signal="area_shape_entered" from="PlayerPath/PlayerPathFollow/PlayerObject" to="PlayerPath/PlayerPathFollow/PlayerObject" method="_on_PlayerObject_area_shape_entered"]
-[connection signal="area_shape_entered" from="EndOfLevel1Area2D" to="EndOfLevel1Area2D" method="_on_EndOfLevel1Area2D_area_shape_entered"]
+[connection signal="area_shape_entered" from="EndOfLevel5Area2D" to="EndOfLevel5Area2D" method="_on_EndOfLevel1Area2D_area_shape_entered"]
