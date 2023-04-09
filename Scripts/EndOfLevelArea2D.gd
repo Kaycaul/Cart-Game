@@ -8,9 +8,8 @@ func _ready():
 func _on_EndOfLevel1Area2D_area_shape_entered(_area_rid, area, _area_shape_index, _local_shape_index):
 	#remove obstacles from this scenes
 	for child in get_node("/root").get_children():
-		if child.get_class() == "Area2D":
+		if child.get_class() == "Area2D" or child.get_class() == "RigidBody2D":
 			child.queue_free()
 	
 	if(str(area).split(":")[0].rstrip("0123456789@").lstrip("@") == "PlayerObject"):
-
 		get_tree().change_scene("res://Scenes/ScoreScreen.tscn")

@@ -91,7 +91,7 @@ func collect():
 	update_coin_hud(global.totalNickels)
 
 func update_coin_hud(number_of_nickels):
-	$CanvasLayer/HUD/CoinLabel.text = "$%.2f" % (number_of_nickels * 0.05)
+	$CanvasLayer/CoinHUD/CoinLabel.text = "$%.2f" % (number_of_nickels * 0.05)
 
 
 func collideWithObstacle():

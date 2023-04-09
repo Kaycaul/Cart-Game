@@ -1,11 +1,5 @@
 extends Control
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var global = get_node("/root/Global")
@@ -43,19 +37,23 @@ func _ready():
 	
 	global.totalScore += levelScore
 	$TotalScore.text = str(global.totalScore)
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+	
+	$CanvasLayer/CoinHUD/CoinLabel.text = "$%.2f" % (global.totalNickels * 0.05)
 
 func _on_Next_level_pressed():
 	var global = get_node("/root/Global")
 	global.currentLevel +=1
+	print(global.currentLevel) #for testing
 	var changeScene = ""
-	if global.currentLevel == 5: 
+	if global.currentLevel == 6: 
 		changeScene = 'res://Scenes/DemoEnd.tscn'
+	#elif global.currentLevel == 5:
+		#if enough coins, go to good ending
+		#if global.totalNickels >= 80:
+		#	changeScene = 'res://Scenes/EndGood.tscn'
+		#if not enough coins, go to bad ending
+		#else:
+		#	changeScene = 'res://Scenes/EndBad.tscn'
 	else:
 		changeScene = "res://Scenes/Level"+str(global.currentLevel)+ "Intro.tscn"
 	global.levelTime = 0

@@ -1,0 +1,128 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Scripts/helpScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/dogicapixel.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/dogicapixelbold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/Cart School Logo.png" type="Texture" id=4]
+[ext_resource path="res://assets/tunnel pic.jpg" type="Texture" id=5]
+[ext_resource path="res://assets/piano violence.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Scripts/BackToStart.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=6]
+size = 12
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 24
+outline_size = 2
+outline_color = Color( 0.0235294, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 19
+outline_size = 2
+outline_color = Color( 0.0235294, 0, 0, 1 )
+extra_spacing_bottom = 6
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 2 )
+
+[node name="helpScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Tunnel Background" type="TextureRect" parent="."]
+modulate = Color( 0.654902, 0.654902, 0.654902, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -14.0
+margin_top = -425.0
+margin_right = 1986.0
+margin_bottom = 3007.0
+rect_scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 5 )
+stretch_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = -0.271
+anchor_bottom = 1.236
+margin_left = 370.0
+margin_top = 655.6
+margin_right = 640.0
+margin_bottom = -114.6
+alignment = 1
+
+[node name="Menu_button" type="Button" parent="VBoxContainer"]
+margin_top = 59.0
+margin_right = 270.0
+margin_bottom = 75.0
+custom_fonts/font = SubResource( 6 )
+text = "Go back to main menu"
+
+[node name="Background Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -30.0
+autoplay = true
+
+[node name="Cart School Logo" type="TextureRect" parent="."]
+margin_left = 800.0
+margin_top = 500.0
+margin_right = 1800.0
+margin_bottom = 900.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 386.0
+margin_top = 46.0
+margin_right = 533.0
+margin_bottom = 64.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = SubResource( 7 )
+text = "Credits"
+
+[node name="Body Text" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -449.0
+margin_top = -190.0
+margin_right = 479.0
+margin_bottom = 163.0
+custom_fonts/normal_font = SubResource( 8 )
+text = "Game Assets
+Carts, cones, fire, ice cream, and coin sprites - Doeball
+Background music - rightdress's friends
+Explosion and coin sounds - jsfxr
+Level background maps - rightdress
+Tunnel/cart photos - rightdress
+Cart School logo and other sprites - rightdress
+Fonts - Font Library
+Cart driver meme - created by rightdress using ImgFlip
+
+Trailer Assets
+Voiceover - Vivek, Doeball
+Tunnel/cart photos/videos - Duncan, rightdress
+Memes - Doeball, rightdress
+Sound effects - Thirty Dollar Website
+Background music - rightdress's friends "
+
+[node name="go_back" type="Button" parent="."]
+margin_left = 300.0
+margin_top = 550.0
+margin_right = 698.0
+margin_bottom = 595.0
+custom_fonts/font = SubResource( 9 )
+text = "Go back to the start screen"
+script = ExtResource( 7 )
+
+[connection signal="pressed" from="VBoxContainer/Menu_button" to="." method="_on_Menu_button_pressed"]
+[connection signal="pressed" from="go_back" to="go_back" method="_on_go_back_pressed"]

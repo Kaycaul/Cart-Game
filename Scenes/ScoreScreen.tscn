@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/WebRes_IMG_16770-450.width-1280.format-jpeg.jpg" type="Texture" id=1]
+[ext_resource path="res://Scenes/CoinHUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/dogicapixelbold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Scenes/ScoreScreen.gd" type="Script" id=4]
 [ext_resource path="res://assets/dogicapixel.ttf" type="DynamicFontData" id=5]
@@ -134,5 +135,9 @@ margin_top = 432.0
 margin_right = 592.0
 margin_bottom = 480.0
 custom_fonts/font = SubResource( 10 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CoinHUD" parent="CanvasLayer" instance=ExtResource( 2 )]
 
 [connection signal="pressed" from="Next level" to="." method="_on_Next_level_pressed"]
