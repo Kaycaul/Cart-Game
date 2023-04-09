@@ -27,6 +27,7 @@ script = ExtResource( 1 )
 autostart = true
 
 [node name="CoinLabel" type="Label" parent="."]
+visible = false
 margin_left = 709.0
 margin_top = 23.0
 margin_right = 805.0
@@ -36,7 +37,8 @@ custom_fonts/font = SubResource( 1 )
 text = "$0.00"
 align = 2
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="CoinSprite" type="Sprite" parent="."]
+visible = false
 position = Vector2( 985, 42 )
 scale = Vector2( 3.08824, 3.08824 )
 texture = ExtResource( 2 )

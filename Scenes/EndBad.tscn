@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scenes/Obstacles/Obstacle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Obstacles/Credits Obstacles/CreditsObstacle.tscn" type="PackedScene" id=2]
@@ -29,7 +29,8 @@
 [ext_resource path="res://assets/pickupCoin.wav" type="AudioStream" id=27]
 [ext_resource path="res://assets/nice with jazz.mp3" type="AudioStream" id=28]
 [ext_resource path="res://Scenes/zoom_in.tres" type="Curve" id=29]
-[ext_resource path="res://Scenes/PathDrawer.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/CoinHUD.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/PathDrawer.tscn" type="PackedScene" id=31]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -133,6 +134,8 @@ volume_db = -30.0
 
 [node name="HUD" parent="PlayerPath/PlayerPathFollow/PlayerObject/CanvasLayer" instance=ExtResource( 15 )]
 
+[node name="CoinHUD" parent="PlayerPath/PlayerPathFollow/PlayerObject/CanvasLayer" instance=ExtResource( 30 )]
+
 [node name="ObstaclePlacer" parent="PlayerPath" groups=["obstacles"] instance=ExtResource( 10 )]
 visible = false
 position = Vector2( 560, -4070 )
@@ -148,7 +151,7 @@ rotation = -1.57694
 total_coins = 0
 spawner_seed = "hehehe"
 
-[node name="PathDrawer" parent="PlayerPath" instance=ExtResource( 30 )]
+[node name="PathDrawer" parent="PlayerPath" instance=ExtResource( 31 )]
 position = Vector2( 585, -3 )
 rotation = -1.57694
 path_part = ExtResource( 24 )

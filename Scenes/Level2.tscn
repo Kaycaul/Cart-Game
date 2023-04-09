@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/PathDrawer.tscn" type="PackedScene" id=2]
@@ -15,7 +15,8 @@
 [ext_resource path="res://Scenes/Obstacles/IceCream.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Obstacles/CartObstacle.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Obstacles/Obstacle.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/CoinHUD.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=17]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -88,6 +89,8 @@ CRASH_FORCE = 175
 
 [node name="HUD" parent="PlayerPath/PlayerPathFollow/PlayerObject/CanvasLayer" instance=ExtResource( 4 )]
 
+[node name="CoinHUD" parent="PlayerPath/PlayerPathFollow/PlayerObject/CanvasLayer" instance=ExtResource( 16 )]
+
 [node name="Player" type="Sprite" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 position = Vector2( 1.8924, -0.647064 )
 rotation = 1.5708
@@ -114,6 +117,7 @@ position = Vector2( 66.623, -2.26465 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 rotating = true
+current = true
 zoom = Vector2( 0.25, 0.25 )
 limit_smoothed = true
 
@@ -141,7 +145,7 @@ spawner_seed = "mEeting "
 [node name="PathDrawer" parent="PlayerPath" instance=ExtResource( 2 )]
 position = Vector2( 2031, -2501 )
 rotation = 0.679498
-path_part = ExtResource( 16 )
+path_part = ExtResource( 17 )
 
 [node name="EndofLevel2Area2D" type="Area2D" parent="."]
 script = ExtResource( 10 )

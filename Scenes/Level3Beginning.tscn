@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/PathDrawer.tscn" type="PackedScene" id=2]
@@ -14,7 +14,8 @@
 [ext_resource path="res://Scenes/zoom_in.tres" type="Curve" id=12]
 [ext_resource path="res://Scenes/Obstacles/Obstacle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Obstacles/FireObstacle.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/CoinHUD.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=16]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -109,6 +110,7 @@ position = Vector2( 66.623, -2.2644 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 rotating = true
+current = true
 zoom = Vector2( 0.25, 0.25 )
 limit_smoothed = true
 
@@ -123,6 +125,8 @@ volume_db = -30.0
 [node name="CanvasLayer" type="CanvasLayer" parent="PlayerPath/PlayerPathFollow/PlayerObject"]
 
 [node name="HUD" parent="PlayerPath/PlayerPathFollow/PlayerObject/CanvasLayer" instance=ExtResource( 4 )]
+
+[node name="CoinHUD" parent="PlayerPath/PlayerPathFollow/PlayerObject/CanvasLayer" instance=ExtResource( 15 )]
 
 [node name="ObstaclePlacer" parent="PlayerPath" instance=ExtResource( 5 )]
 position = Vector2( 2547, -631 )
@@ -140,7 +144,7 @@ spawner_seed = ":0"
 [node name="PathDrawer" parent="PlayerPath" instance=ExtResource( 2 )]
 position = Vector2( 2031, -2501 )
 rotation = 0.679033
-path_part = ExtResource( 15 )
+path_part = ExtResource( 16 )
 
 [node name="BeginningOfLevel3Area2D" type="Area2D" parent="."]
 script = ExtResource( 10 )

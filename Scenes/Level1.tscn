@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/ObstaclePlacer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/PathDrawer.tscn" type="PackedScene" id=2]
@@ -14,7 +14,8 @@
 [ext_resource path="res://Scenes/zoom_in.tres" type="Curve" id=12]
 [ext_resource path="res://Scenes/Obstacles/Obstacle.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Obstacles/CartObstacle.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/CoinHUD.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=16]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -147,6 +148,8 @@ volume_db = -30.0
 
 [node name="HUD" parent="PlayerPath/PlayerPathFollow/PlayerObject/CanvasLayer" instance=ExtResource( 4 )]
 
+[node name="CoinHUD" parent="PlayerPath/PlayerPathFollow/PlayerObject/CanvasLayer" instance=ExtResource( 15 )]
+
 [node name="ObstaclePlacer" parent="PlayerPath" groups=["obstacles"] instance=ExtResource( 1 )]
 position = Vector2( 936.613, 2267.58 )
 rotation = -3.13937
@@ -162,7 +165,7 @@ spawner_seed = "hehehe"
 
 [node name="PathDrawer" parent="PlayerPath" instance=ExtResource( 2 )]
 script = SubResource( 6 )
-path_part = ExtResource( 15 )
+path_part = ExtResource( 16 )
 
 [node name="EndOfLevel1Area2D" type="Area2D" parent="."]
 script = ExtResource( 5 )

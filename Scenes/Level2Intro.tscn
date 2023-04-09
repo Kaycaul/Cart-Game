@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Level2Button.gd" type="Script" id=1]
-[ext_resource path="res://assets/IMG_2177.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/cart 95.jpg" type="Texture" id=2]
 [ext_resource path="res://assets/red square.png" type="Texture" id=3]
 [ext_resource path="res://assets/dogicapixelbold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/dogicapixel.ttf" type="DynamicFontData" id=5]
@@ -35,15 +35,16 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color( 0.545098, 0.545098, 0.545098, 1 )
-margin_left = -27.0
-margin_top = -17.0
-margin_right = 14383.0
-margin_bottom = 6253.0
+margin_left = -189.0
+margin_top = -12.0
+margin_right = 14221.0
+margin_bottom = 6258.0
 rect_scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 2 )
 expand = true
 
 [node name="Logo Coverup" type="TextureRect" parent="."]
+visible = false
 modulate = Color( 0.556863, 0.203922, 0.203922, 1 )
 self_modulate = Color( 0.729412, 0.109804, 0.109804, 1 )
 margin_left = 396.0

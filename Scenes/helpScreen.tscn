@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://assets/Cart School Logo.png" type="Texture" id=1]
 [ext_resource path="res://assets/cart.png" type="Texture" id=2]
@@ -8,17 +8,12 @@
 [ext_resource path="res://assets/piano violence.mp3" type="AudioStream" id=6]
 [ext_resource path="res://assets/dogicapixel.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://assets/tunnel pic.jpg" type="Texture" id=8]
+[ext_resource path="res://Scripts/BackToStart.gd" type="Script" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 12
 outline_size = 2
 outline_color = Color( 0.0431373, 0.00392157, 0.00392157, 1 )
-font_data = ExtResource( 7 )
-
-[sub_resource type="DynamicFont" id=6]
-size = 12
-outline_size = 2
-outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -43,6 +38,9 @@ font_data = ExtResource( 7 )
 size = 12
 outline_size = 2
 outline_color = Color( 0.0156863, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=6]
 font_data = ExtResource( 7 )
 
 [node name="helpScreen" type="Control"]
@@ -76,22 +74,6 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 2
 custom_fonts/normal_font = SubResource( 1 )
 text = "Move left and right with the arrow keys or wasd. As you avoid obstacles, your speed will increase."
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_top = -0.271
-anchor_bottom = 1.236
-margin_left = 370.0
-margin_top = 655.6
-margin_right = 640.0
-margin_bottom = -114.6
-alignment = 1
-
-[node name="Menu_button" type="Button" parent="VBoxContainer"]
-margin_top = 59.0
-margin_right = 270.0
-margin_bottom = 75.0
-custom_fonts/font = SubResource( 6 )
-text = "Go back to main menu"
 
 [node name="Cone" type="Sprite" parent="."]
 position = Vector2( 300, 169 )
@@ -160,4 +142,13 @@ margin_bottom = 900.0
 rect_scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 1 )
 
-[connection signal="pressed" from="VBoxContainer/Menu_button" to="." method="_on_Menu_button_pressed"]
+[node name="go_back" type="Button" parent="."]
+margin_left = 300.0
+margin_top = 550.0
+margin_right = 698.0
+margin_bottom = 595.0
+custom_fonts/font = SubResource( 6 )
+text = "Go back to the start screen"
+script = ExtResource( 9 )
+
+[connection signal="pressed" from="go_back" to="go_back" method="_on_go_back_pressed"]
