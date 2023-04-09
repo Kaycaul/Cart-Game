@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scenes/PathDrawer.gd" type="Script" id=1]
+
+[node name="PathDrawer" type="PathFollow2D"]
+position = Vector2( 2089, -2445 )
+rotation = 0.666838
+script = ExtResource( 1 )

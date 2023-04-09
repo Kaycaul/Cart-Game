@@ -1,7 +1,7 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/PathLine.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/PathDrawer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/CoinPlacer.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/ObstaclePlacer.tscn" type="PackedScene" id=5]
@@ -15,6 +15,7 @@
 [ext_resource path="res://Scenes/Obstacles/IceCream.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Obstacles/CartObstacle.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Obstacles/Obstacle.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=16]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -55,6 +56,7 @@ position = Vector2( 77, 207 )
 
 [node name="Background" type="Sprite" parent="Scenery"]
 scale = Vector2( 1.5, 1.5 )
+z_index = -2
 texture = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
@@ -65,13 +67,6 @@ curve = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="PathLine" type="Line2D" parent="PlayerPath"]
-position = Vector2( 1, 0 )
-width = 80.0
-default_color = Color( 0.490196, 0.505882, 0.584314, 1 )
-antialiased = true
-script = ExtResource( 2 )
 
 [node name="PlayerPathFollow" type="PathFollow2D" parent="PlayerPath"]
 position = Vector2( 2031, -2501 )
@@ -143,6 +138,11 @@ position = Vector2( 2031, -2501 )
 rotation = 0.679498
 total_coins = 30
 spawner_seed = "mEeting "
+
+[node name="PathDrawer" parent="PlayerPath" instance=ExtResource( 2 )]
+position = Vector2( 2031, -2501 )
+rotation = 0.679498
+path_part = ExtResource( 16 )
 
 [node name="EndofLevel2Area2D" type="Area2D" parent="."]
 script = ExtResource( 10 )
