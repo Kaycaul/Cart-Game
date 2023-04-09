@@ -109,7 +109,6 @@ position = Vector2( 66.623, -2.2644 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 rotating = true
-current = true
 zoom = Vector2( 0.25, 0.25 )
 limit_smoothed = true
 

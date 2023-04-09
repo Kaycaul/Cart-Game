@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scenes/Obstacles/Obstacle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Obstacles/Credits Obstacles/CreditsObstacle.tscn" type="PackedScene" id=2]
@@ -23,12 +23,13 @@
 [ext_resource path="res://Scenes/Obstacles/Credits Obstacles/ForPlayingObstacle.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=22]
 [ext_resource path="res://Scenes/EndOfLevel5BadArea2D.gd" type="Script" id=23]
-[ext_resource path="res://Scripts/PathLine.gd" type="Script" id=24]
+[ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=24]
 [ext_resource path="res://assets/cart.png" type="Texture" id=25]
 [ext_resource path="res://assets/explosion.wav" type="AudioStream" id=26]
 [ext_resource path="res://assets/pickupCoin.wav" type="AudioStream" id=27]
 [ext_resource path="res://assets/nice with jazz.mp3" type="AudioStream" id=28]
 [ext_resource path="res://Scenes/zoom_in.tres" type="Curve" id=29]
+[ext_resource path="res://Scenes/PathDrawer.tscn" type="PackedScene" id=30]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -62,7 +63,7 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 91, 42.3052 )
 
-[node name="Root" type="Node"]
+[node name="Root3" type="Node"]
 
 [node name="Scenery" type="Node2D" parent="."]
 position = Vector2( 77, 207 )
@@ -72,13 +73,6 @@ curve = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-
-[node name="PathLine" type="Line2D" parent="PlayerPath"]
-position = Vector2( 1, 0 )
-width = 80.0
-default_color = Color( 0.490196, 0.505882, 0.584314, 1 )
-antialiased = true
-script = ExtResource( 24 )
 
 [node name="PlayerPathFollow" type="PathFollow2D" parent="PlayerPath"]
 position = Vector2( 585, -3 )
@@ -153,6 +147,11 @@ position = Vector2( 585, -3 )
 rotation = -1.57694
 total_coins = 0
 spawner_seed = "hehehe"
+
+[node name="PathDrawer" parent="PlayerPath" instance=ExtResource( 30 )]
+position = Vector2( 585, -3 )
+rotation = -1.57694
+path_part = ExtResource( 24 )
 
 [node name="EndOfLevel5BadArea2D" type="Area2D" parent="."]
 position = Vector2( 579, -734 )

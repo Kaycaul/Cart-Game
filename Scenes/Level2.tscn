@@ -49,7 +49,7 @@ tracks/0/keys = {
 [sub_resource type="RectangleShape2D" id=5]
 extents = Vector2( 39.5, 49 )
 
-[node name="Root" type="Node"]
+[node name="Root2" type="Node"]
 
 [node name="Scenery" type="Node2D" parent="."]
 position = Vector2( 77, 207 )
@@ -114,7 +114,6 @@ position = Vector2( 66.623, -2.26465 )
 rotation = 1.5708
 scale = Vector2( 0.4, 0.4 )
 rotating = true
-current = true
 zoom = Vector2( 0.25, 0.25 )
 limit_smoothed = true
 
