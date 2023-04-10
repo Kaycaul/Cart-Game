@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scenes/Obstacles/Obstacle.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Obstacles/Credits Obstacles/CreditsObstacle.tscn" type="PackedScene" id=2]
@@ -23,7 +23,7 @@
 [ext_resource path="res://Scenes/Obstacles/Credits Obstacles/ForPlayingObstacle.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=22]
 [ext_resource path="res://Scenes/EndOfLevel5BadArea2D.gd" type="Script" id=23]
-[ext_resource path="res://Scenes/HellFloor.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=24]
 [ext_resource path="res://assets/cart.png" type="Texture" id=25]
 [ext_resource path="res://assets/explosion.wav" type="AudioStream" id=26]
 [ext_resource path="res://assets/pickupCoin.wav" type="AudioStream" id=27]
@@ -31,6 +31,7 @@
 [ext_resource path="res://Scenes/zoom_in.tres" type="Curve" id=29]
 [ext_resource path="res://Scenes/CoinHUD.tscn" type="PackedScene" id=30]
 [ext_resource path="res://Scenes/PathDrawer.tscn" type="PackedScene" id=31]
+[ext_resource path="res://assets/floor.png" type="Texture" id=32]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -66,6 +67,18 @@ extents = Vector2( 91, 42.3052 )
 
 [node name="Root3" type="Node"]
 
+[node name="Path" type="TextureRect" parent="."]
+margin_left = 623.0
+margin_top = -4996.0
+margin_right = 1623.0
+margin_bottom = -4590.0
+rect_rotation = 90.0
+rect_scale = Vector2( 5, 0.2 )
+texture = ExtResource( 32 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Scenery" type="Node2D" parent="."]
 position = Vector2( 77, 207 )
 z_index = -2
@@ -75,6 +88,21 @@ curve = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="ObstaclePlacer" parent="PlayerPath" groups=["obstacles"] instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 560, -4070 )
+rotation = 0.0
+obstacles_to_spawn = [ ExtResource( 13 ), ExtResource( 1 ) ]
+obstacle_count = 0
+spawner_seed = "among us"
+
+[node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 8 )]
+visible = false
+position = Vector2( 585, -3 )
+rotation = -1.57694
+total_coins = 0
+spawner_seed = "hehehe"
 
 [node name="PlayerPathFollow" type="PathFollow2D" parent="PlayerPath"]
 position = Vector2( 585, -3 )
@@ -136,21 +164,6 @@ volume_db = -30.0
 [node name="HUD" parent="PlayerPath/PlayerPathFollow/PlayerObject/CanvasLayer" instance=ExtResource( 15 )]
 
 [node name="CoinHUD" parent="PlayerPath/PlayerPathFollow/PlayerObject/CanvasLayer" instance=ExtResource( 30 )]
-
-[node name="ObstaclePlacer" parent="PlayerPath" groups=["obstacles"] instance=ExtResource( 10 )]
-visible = false
-position = Vector2( 560, -4070 )
-rotation = 0.0
-obstacles_to_spawn = [ ExtResource( 13 ), ExtResource( 1 ) ]
-obstacle_count = 0
-spawner_seed = "among us"
-
-[node name="CoinPlacer" parent="PlayerPath" instance=ExtResource( 8 )]
-visible = false
-position = Vector2( 585, -3 )
-rotation = -1.57694
-total_coins = 0
-spawner_seed = "hehehe"
 
 [node name="PathDrawer" parent="PlayerPath" instance=ExtResource( 31 )]
 position = Vector2( 585, -3 )

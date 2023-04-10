@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/DemoEndButton.gd" type="Script" id=1]
 [ext_resource path="res://assets/IMG_2177.jpg" type="Texture" id=2]
 [ext_resource path="res://assets/Cart School Logo.png" type="Texture" id=3]
-[ext_resource path="res://assets/pink star.png" type="Texture" id=4]
+[ext_resource path="res://assets/pink scribble.png" type="Texture" id=4]
 [ext_resource path="res://assets/cart driver meme.jpg" type="Texture" id=5]
 [ext_resource path="res://Scenes/CoinHUD.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sadtrombone.swf.mp3" type="AudioStream" id=7]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -87,5 +88,10 @@ texture = ExtResource( 4 )
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CoinHUD" parent="CanvasLayer" instance=ExtResource( 6 )]
+
+[node name="SadTromboneSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -30.0
+autoplay = true
 
 [connection signal="pressed" from="DemoEndButton" to="DemoEndButton" method="_on_DemoEndButton_pressed"]

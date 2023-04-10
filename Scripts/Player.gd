@@ -6,7 +6,7 @@ export var accel = 0.5
 export(Curve) var zoom_curve
 export(Curve) var intro_zoom_curve
 export var MAX_SPEED = 601
-export var DEFAULT_SPEED = 100
+export var DEFAULT_SPEED = 0
 export var CRASH_FORCE = 100 # how much the player slows down on impact
 export var INTRO_WAIT_TIME = 3 # seconds until the player can move at the start of each level
 

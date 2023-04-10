@@ -12,5 +12,4 @@ func _on_EndOfLevel5BadArea2D_area_shape_entered(_area_rid, area, _area_shape_in
 			child.position = child.position + Vector2(10000,0)
 	
 	if(str(area).split(":")[0].rstrip("0123456789@").lstrip("@") == "PlayerObject"):
-
 		get_tree().change_scene("res://Scenes/TryAgain.tscn")
