@@ -23,7 +23,7 @@
 [ext_resource path="res://Scenes/Obstacles/Credits Obstacles/ForPlayingObstacle.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=22]
 [ext_resource path="res://Scenes/EndOfLevel5BadArea2D.gd" type="Script" id=23]
-[ext_resource path="res://Scenes/Floor.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/HellFloor.tscn" type="PackedScene" id=24]
 [ext_resource path="res://assets/cart.png" type="Texture" id=25]
 [ext_resource path="res://assets/explosion.wav" type="AudioStream" id=26]
 [ext_resource path="res://assets/pickupCoin.wav" type="AudioStream" id=27]
@@ -68,6 +68,7 @@ extents = Vector2( 91, 42.3052 )
 
 [node name="Scenery" type="Node2D" parent="."]
 position = Vector2( 77, 207 )
+z_index = -2
 
 [node name="PlayerPath" type="Path2D" parent="."]
 curve = SubResource( 1 )
