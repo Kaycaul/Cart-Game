@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Level4Button.gd" type="Script" id=1]
-[ext_resource path="res://assets/cart 74.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/blue cart.jpg" type="Texture" id=2]
 [ext_resource path="res://assets/red square.png" type="Texture" id=3]
 [ext_resource path="res://assets/dogicapixelbold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://assets/dogicapixel.ttf" type="DynamicFontData" id=5]

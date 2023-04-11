@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/DemoEndButton.gd" type="Script" id=1]
 [ext_resource path="res://assets/IMG_2177.jpg" type="Texture" id=2]
@@ -7,10 +7,12 @@
 [ext_resource path="res://assets/cart driver meme.jpg" type="Texture" id=5]
 [ext_resource path="res://Scenes/CoinHUD.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/sadtrombone.swf.mp3" type="AudioStream" id=7]
+[ext_resource path="res://Scenes/TryAgain.gd" type="Script" id=8]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_lock_": true
 }
