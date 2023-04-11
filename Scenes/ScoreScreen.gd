@@ -38,6 +38,7 @@ func _ready():
 	global.totalScore += levelScore
 	$TotalScore.text = str(global.totalScore)
 	
+	#update coin count
 	$CanvasLayer/CoinHUD/CoinLabel.text = "$%.2f" % (global.totalNickels * 0.05)
 
 func _on_Next_level_pressed():
